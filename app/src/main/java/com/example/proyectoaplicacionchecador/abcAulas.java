@@ -11,6 +11,7 @@ import android.widget.Spinner;
 public class abcAulas extends AppCompatActivity {
     Button btnAceptar;
     EditText etnombre;
+    int joto;
     Spinner spAccion;
 
     @Override
