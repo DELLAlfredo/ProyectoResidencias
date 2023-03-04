@@ -32,8 +32,9 @@ public class Inicio_de_sesion extends AppCompatActivity {
     btnInicarSesion.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            if(EdUsuario.getText().toString().equalsIgnoreCase(user)&&
-                    EdContraseña.getText().toString().equalsIgnoreCase(password)){
+            String frase = EdUsuario.getText().toString();
+            String pass = EdContraseña.getText().toString();
+            if(EdUsuario.getText().toString().equalsIgnoreCase(user)&& EdContraseña.getText().toString().equalsIgnoreCase(password)){
                 Toast.makeText(getApplicationContext(),"Ha iniciado sesión correctamente",Toast.LENGTH_SHORT).show();
                 //Intent intent = new Intent(this, OtraActividad.class);  //Creamos el intent y le indicamos desde donde vamos (this) y a donde vamos (OtraActividad.class)
                 //startActivity(intent);  //Abrimos la otra actividad
@@ -41,6 +42,8 @@ public class Inicio_de_sesion extends AppCompatActivity {
 
 
             }else{
+                EdUsuario.setError("Ingresa tu nombre de usuario correcto");
+                EdContraseña.setError("Ingresa la contraseña correcta");
                 Toast.makeText(getApplicationContext(),"User o contraseña incorrectos",Toast.LENGTH_SHORT).show();
                 camposVacios();
             }
