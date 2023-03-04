@@ -13,8 +13,8 @@ import android.widget.Toast;
 public class Inicio_de_sesion extends AppCompatActivity {
     Button btnInicarSesion;
     EditText EdUsuario, EdContraseña;
-    private String password = "123";
-    private String user = "root";
+     String password = "123";
+     String user = "root";
 
 
 
@@ -32,7 +32,7 @@ public class Inicio_de_sesion extends AppCompatActivity {
     btnInicarSesion.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            if(!EdUsuario.getText().toString().equalsIgnoreCase(user)&&
+            if(EdUsuario.getText().toString().equalsIgnoreCase(user)&&
                     EdContraseña.getText().toString().equalsIgnoreCase(password)){
                 Toast.makeText(getApplicationContext(),"Ha iniciado sesión correctamente",Toast.LENGTH_SHORT).show();
                 //Intent intent = new Intent(this, OtraActividad.class);  //Creamos el intent y le indicamos desde donde vamos (this) y a donde vamos (OtraActividad.class)
