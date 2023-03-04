@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3949AB"
+    android:background="#3F498A"
     tools:context=".Inicio_de_sesion">
 
     <TextView
@@ -14,8 +14,9 @@
         android:layout_marginTop="48dp"
         android:backgroundTint="#FFFFFF"
         android:text="LOGING"
-        android:textStyle="italic"
         android:textSize="48sp"
+        android:textStyle="italic"
+        android:textColor="@color/design_default_color_on_primary"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintHorizontal_bias="0.927"
         app:layout_constraintStart_toStartOf="@+id/imageView"
@@ -27,10 +28,13 @@
         android:layout_height="51dp"
         android:layout_marginTop="20dp"
         android:backgroundTint="#FFFFFF"
+        android:drawableTint="@color/white"
         android:ems="10"
         android:hint="Ingresa Usuario"
         android:inputType="textPersonName"
         android:minHeight="48dp"
+        android:textColor="@color/design_default_color_on_primary"
+        android:textColorHint="#FDF7F7"
         app:layout_constraintEnd_toEndOf="@+id/Logingtv"
         app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="@+id/Logingtv"
@@ -46,6 +50,7 @@
         android:hint="Ingresa Contraseña"
         android:inputType="textPersonName"
         android:minHeight="48dp"
+        android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="@+id/EdUsuario"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/EdUsuario"
@@ -53,18 +58,21 @@
 
     <Button
         android:id="@+id/btnInicarSesion"
-        android:layout_width="173dp"
+        android:layout_width="172dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
         android:background="#4CAF50"
+        android:backgroundTint="#1E88E5"
+        android:foregroundTint="#1E88E5"
         android:text="Iniciar Sesion"
         android:textColor="#263238"
+        android:textColorHint="#FFFEFE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/EdUsuario"
-        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintHorizontal_bias="0.196"
         app:layout_constraintStart_toStartOf="@+id/EdContraseña"
         app:layout_constraintTop_toBottomOf="@+id/EdContraseña"
-        app:layout_constraintVertical_bias="0.179" />
+        app:layout_constraintVertical_bias="0.219" />
 
     <ImageView
         android:id="@+id/imageView"
