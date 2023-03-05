@@ -12,6 +12,9 @@
         android:theme="@style/Theme.ProyectoAplicacionChecador"
         tools:targetApi="31">
         <activity
+            android:name=".chequeoClases"
+            android:exported="false" />
+        <activity
             android:name=".abcMaestros"
             android:exported="false" />
         <activity
