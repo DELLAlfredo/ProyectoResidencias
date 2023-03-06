@@ -23,4 +23,8 @@ public class abcAulas extends AppCompatActivity {
         ArrayAdapter<String> Adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, lenguajes);
         spAccion.setAdapter(Adapter);
     }
+    public void onCreate(SQLiteDatabase db) {
+    }
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
+    }
 }

@@ -15,7 +15,7 @@ public class Inicio_de_sesion extends AppCompatActivity {
     EditText EdUsuario, EdContraseña;
      String password = "123";
      String user = "root";
-
+    private Object backgroundTint;
 
 
     @SuppressLint("WrongViewCast")
@@ -45,6 +45,7 @@ public class Inicio_de_sesion extends AppCompatActivity {
                 EdUsuario.setError("Ingresa tu nombre de usuario correcto");
                 EdContraseña.setError("Ingresa la contraseña correcta");
                 Toast.makeText(getApplicationContext(),"User o contraseña incorrectos",Toast.LENGTH_SHORT).show();
+
                 camposVacios();
             }
         }
