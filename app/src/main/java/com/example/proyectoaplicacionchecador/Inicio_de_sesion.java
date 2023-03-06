@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.proyectoaplicacionchecador.db.DbMaestros;
+
 public class Inicio_de_sesion extends AppCompatActivity {
     Button btnInicarSesion;
     EditText EdUsuario, EdContraseña;
@@ -36,8 +38,8 @@ public class Inicio_de_sesion extends AppCompatActivity {
             String pass = EdContraseña.getText().toString();
             if(EdUsuario.getText().toString().equalsIgnoreCase(user)&& EdContraseña.getText().toString().equalsIgnoreCase(password)){
                 Toast.makeText(getApplicationContext(),"Ha iniciado sesión correctamente",Toast.LENGTH_SHORT).show();
-                //Intent intent = new Intent(this, OtraActividad.class);  //Creamos el intent y le indicamos desde donde vamos (this) y a donde vamos (OtraActividad.class)
-                //startActivity(intent);  //Abrimos la otra actividad
+               // Intent intent = new Intent(Inicio_de_sesion.this, abcMaestros.class);  //Creamos el intent y le indicamos desde donde vamos (this) y a donde vamos (OtraActividad.class)
+             //   startActivity(intent);  //Abrimos la otra actividad
 
 
 
