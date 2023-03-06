@@ -37,4 +37,8 @@ public class abcAulas extends AppCompatActivity {
         });
 
     }
+    public void onCreate(SQLiteDatabase db) {
+    }
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
+    }
 }
