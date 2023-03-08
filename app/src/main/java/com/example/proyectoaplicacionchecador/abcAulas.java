@@ -2,6 +2,7 @@ package com.example.proyectoaplicacionchecador;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -10,7 +11,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 public class abcAulas extends AppCompatActivity {
-    Button btnAceptar;
+    Button btnAceptar,btnregresar;
     EditText etnombre;
     int joto = 0;
     Spinner spAccion;
@@ -32,6 +33,15 @@ public class abcAulas extends AppCompatActivity {
 
             }
         });
+
+        btnregresar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent reg = new Intent(abcAulas.this,Inicio_de_sesion.class);
+                startActivity(reg);
+            }
+        });
+
     }
 
 }
