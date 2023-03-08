@@ -8,10 +8,12 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 
 public class abcAulas extends AppCompatActivity {
-    Button btnAceptar,btnregresar;
+    Button btnAceptar;
+    ImageButton btnregresar;
     EditText etnombre;
     int joto = 0;
     Spinner spAccion;
@@ -19,9 +21,10 @@ public class abcAulas extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        btnAceptar = findViewById(R.id.btnAceptar);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_abc_aulas);
+        btnAceptar = findViewById(R.id.btnAceptar);
+        btnregresar = findViewById(R.id.btnregresar);
         spAccion = (Spinner)findViewById(R.id.spAccion);
         String[] lenguajes = {"Seleccione","Alta","Baja","Cambio"};
         ArrayAdapter<String> Adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, lenguajes);
