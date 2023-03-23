@@ -25,11 +25,18 @@ public class DbHelper extends SQLiteOpenHelper {
                 "nombre TEXT NOT NULL,"+
                 "apellidos TEXT NOT NULL,"+
                 "academia TEXT NOT NULL)");
+
+        sqLiteDatabase.execSQL("create table carreras(id int primary key, nombre text)");
+
+        sqLiteDatabase.execSQL("create table carreras(id int primary key, codigo text)");
+
     }
+
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         sqLiteDatabase.execSQL("DROP TABLE " + TABLE_MAESTROS);
         onCreate(sqLiteDatabase);
     }
+
 }
