@@ -5,7 +5,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
 import androidx.annotation.Nullable;
-
+/*
 public class DbMaestros extends DbHelper{
 
     Context context;
@@ -37,3 +37,4 @@ public class DbMaestros extends DbHelper{
     }
 
 }
+*/
