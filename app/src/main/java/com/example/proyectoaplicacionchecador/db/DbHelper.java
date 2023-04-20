@@ -27,6 +27,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 "apellidos TEXT NOT NULL,"+
                 "academia TEXT NOT NULL)");*/
         db.execSQL("create table t_maestros (id int primary key, nombre TEXT, apellidos TEXT, academia TEXT)");
+        db.execSQL("create table t_clase (id int primary key, hora TEXT, fecha TEXT, academia TEXT, id_aula int, id_carrera int, id_maestro int)");
 
 
     }
