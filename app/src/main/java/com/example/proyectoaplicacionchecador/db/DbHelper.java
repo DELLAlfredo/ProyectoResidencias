@@ -13,6 +13,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String TABLE_MAESTROS = "t_maestros";
     public static final String TABLE_CARRERA = "t_carrera";
     public static final String TABLE_ACADEMIA = "t_academia";
+    public static final String TABLE_USER = "t_user";
 
 
 
@@ -39,6 +40,11 @@ public class DbHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_ACADEMIA + "("+
                 "id_academia INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, "+
                 "codigo TEXT NOT NULL)");
+
+        sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_USER + "("+
+                "id_user INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, "+
+                "usuario TEXT NOT NULL,"+
+                "contraseña TEXT NOT NULL)");
     }
 
 
