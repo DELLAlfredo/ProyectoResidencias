@@ -36,7 +36,7 @@ public class abcMaestros extends AppCompatActivity {
         spAcademia = findViewById(R.id.spAcademia);
         spCrud = findViewById(R.id.spCrud);
 
-        String[] abc = {"ISIC","IIND","IGEM"};
+        String[] abc = {"ISIC","IIND","IGEM","IINA","IIA"};
         ArrayAdapter<String> Adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, abc);
         spAcademia.setAdapter(Adapter);
 

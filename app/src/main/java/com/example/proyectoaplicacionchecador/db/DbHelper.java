@@ -6,6 +6,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import com.example.proyectoaplicacionchecador.abcMaestros;
+
 public class DbHelper extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 2;
@@ -20,7 +22,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
 
 
-    public DbHelper(@Nullable Context context) {
+    public DbHelper(abcMaestros abcMaestros, String pos, @Nullable Context context, int i) {
         super(context, DATABASE_NOMBRE,null, DATABASE_VERSION);
     }
 
