@@ -11,9 +11,9 @@
         android:id="@+id/spAccion2"
         android:layout_width="375dp"
         android:layout_height="43dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="96dp"
         app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName2"
-        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName2"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
 
@@ -36,9 +36,10 @@
         android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/spAccion2"
-        app:layout_constraintHorizontal_bias="0.434"
+        app:layout_constraintHorizontal_bias="0.913"
         app:layout_constraintStart_toStartOf="@+id/spAccion2"
-        app:layout_constraintTop_toBottomOf="@+id/spAccion2" />
+        app:layout_constraintTop_toBottomOf="@+id/spAccion2"
+        app:layout_constraintVertical_bias="0.157" />
 
     <EditText
         android:id="@+id/editTextTextPersonName2"
