@@ -37,11 +37,11 @@
         app:layout_constraintGuide_percent="0.33" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnreporte"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Button"
+        android:text="GENERAR REPORTE"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="30dp" />
 
