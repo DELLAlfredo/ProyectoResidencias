@@ -57,6 +57,11 @@ public class abcAulas extends AppCompatActivity {
                 startActivity(maestro);
 
                 return true;
+            case R.id.Salir:
+                Intent salir =  new Intent(abcAulas.this, Inicio_de_sesion.class);
+                startActivity(salir);
+
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

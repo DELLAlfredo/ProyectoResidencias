@@ -222,6 +222,11 @@ public class abcMaestros extends AppCompatActivity {
                 startActivity(aula);
 
                 return true;
+            case R.id.Salir:
+                Intent salir =  new Intent(abcMaestros.this, Inicio_de_sesion.class);
+                startActivity(salir);
+
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

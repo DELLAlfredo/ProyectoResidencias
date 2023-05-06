@@ -12,16 +12,20 @@
         android:id="@+id/spAccion4"
         android:layout_width="177dp"
         android:layout_height="40dp"
-        tools:layout_editor_absoluteX="29dp"
-        tools:layout_editor_absoluteY="119dp" />
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="52dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnreporte" />
 
     <Spinner
         android:id="@+id/spAccion5"
         android:layout_width="177dp"
         android:layout_height="40dp"
         android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/spAccion4"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="119dp" />
+        app:layout_constraintStart_toEndOf="@+id/spAccion4"
+        app:layout_constraintTop_toTopOf="@+id/spAccion4" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -34,10 +38,12 @@
         android:id="@+id/btnreporte"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="36dp"
         android:text="GENERAR REPORTE"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="30dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.158"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TableLayout
         android:id="@+id/tabla"

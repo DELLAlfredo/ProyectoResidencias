@@ -49,6 +49,11 @@ public class chequeoClases extends AppCompatActivity {
                 startActivity(maestro);
 
                 return true;
+            case R.id.Salir:
+                Intent salir =  new Intent(chequeoClases.this, Inicio_de_sesion.class);
+                startActivity(salir);
+
+                return true;
 
             default:
                 return super.onOptionsItemSelected(item);

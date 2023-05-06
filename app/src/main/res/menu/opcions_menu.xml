@@ -20,5 +20,9 @@
         android:id="@+id/Maestro"
         android:title="Maestros"
         />
+    <item
+        android:id="@+id/Salir"
+        android:title="Cerrar Cuenta"
+        />
 
 </menu>
