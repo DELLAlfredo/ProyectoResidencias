@@ -13,7 +13,7 @@ import android.widget.Spinner;
 
 public class abcAulas extends AppCompatActivity {
     Button btnAceptar;
-    ImageButton btnregresar;
+
 
     EditText etnombre;
     int joto = 0;
@@ -25,7 +25,6 @@ public class abcAulas extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_abc_aulas);
         btnAceptar = findViewById(R.id.btnAceptar);
-        btnregresar = findViewById(R.id.btnregresar);
         etnombre.findViewById(R.id.etNombre);
 
         spAccion = (Spinner)findViewById(R.id.spAccion);
@@ -40,13 +39,7 @@ public class abcAulas extends AppCompatActivity {
             }
         });
 
-        btnregresar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent reg = new Intent(abcAulas.this,Inicio_de_sesion.class);
-                startActivity(reg);
-            }
-        });
+
 
     }
 
