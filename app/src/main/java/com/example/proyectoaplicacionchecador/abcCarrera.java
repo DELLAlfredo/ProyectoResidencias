@@ -58,6 +58,11 @@ public class abcCarrera extends AppCompatActivity {
                 startActivity(aula);
 
                 return true;
+            case R.id.Maestro:
+                Intent maestro =  new Intent(abcCarrera.this, abcMaestros.class);
+                startActivity(maestro);
+
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

@@ -16,5 +16,9 @@
         android:id="@+id/campoaula"
         android:title="Aulas"
         />
+    <item
+        android:id="@+id/Maestro"
+        android:title="Maestros"
+        />
 
 </menu>
