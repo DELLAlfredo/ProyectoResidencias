@@ -8,41 +8,41 @@
     tools:context=".abcCarrera">
 
     <Spinner
-        android:id="@+id/spAccion2"
+        android:id="@+id/sPOpciones"
         android:layout_width="375dp"
         android:layout_height="43dp"
         android:layout_marginTop="96dp"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName2"
+        app:layout_constraintEnd_toEndOf="@+id/edCarrera"
         app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+        app:layout_constraintStart_toStartOf="@+id/edCarrera"
+        app:layout_constraintTop_toBottomOf="@+id/edCarrera" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="163dp"
         android:layout_height="52dp"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="124dp"
         android:text="NOMBRE"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="398dp"
-        android:layout_height="91dp"
+        android:id="@+id/btnGuardar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginTop="264dp"
-        android:text="Button"
+        android:text="Guardar"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/spAccion2"
-        app:layout_constraintHorizontal_bias="0.913"
-        app:layout_constraintStart_toStartOf="@+id/spAccion2"
-        app:layout_constraintTop_toBottomOf="@+id/spAccion2"
-        app:layout_constraintVertical_bias="0.157" />
+        app:layout_constraintEnd_toEndOf="@+id/sPOpciones"
+        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintStart_toStartOf="@+id/sPOpciones"
+        app:layout_constraintTop_toBottomOf="@+id/sPOpciones"
+        app:layout_constraintVertical_bias="1.0" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/edCarrera"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
@@ -53,4 +53,21 @@
         app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="CARRERAS"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.93" />
 </androidx.constraintlayout.widget.ConstraintLayout>

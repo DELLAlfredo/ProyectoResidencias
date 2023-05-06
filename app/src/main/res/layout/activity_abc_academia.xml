@@ -8,7 +8,7 @@
     tools:context=".abcAcademia">
 
     <Spinner
-        android:id="@+id/spAccion3"
+        android:id="@+id/sPHoraFiltro"
         android:layout_width="375dp"
         android:layout_height="43dp"
         android:layout_marginTop="28dp"
@@ -25,10 +25,10 @@
         android:layout_marginBottom="72dp"
         android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/spAccion3"
+        app:layout_constraintEnd_toEndOf="@+id/sPHoraFiltro"
         app:layout_constraintHorizontal_bias="0.608"
-        app:layout_constraintStart_toStartOf="@+id/spAccion3"
-        app:layout_constraintTop_toBottomOf="@+id/spAccion2" />
+        app:layout_constraintStart_toStartOf="@+id/sPHoraFiltro"
+        app:layout_constraintTop_toBottomOf="@+id/sPOpciones" />
 
     <TextView
         android:id="@+id/textView2"
