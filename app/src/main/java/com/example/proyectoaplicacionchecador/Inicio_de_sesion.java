@@ -50,8 +50,6 @@ public class Inicio_de_sesion extends AppCompatActivity {
         }
     });
 
-
-
     }
 
     private void camposVacios(){

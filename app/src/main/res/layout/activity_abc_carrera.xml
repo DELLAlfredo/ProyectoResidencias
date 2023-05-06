@@ -12,10 +12,12 @@
         android:layout_width="375dp"
         android:layout_height="43dp"
         android:layout_marginTop="96dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnGuardar"
         app:layout_constraintEnd_toEndOf="@+id/edCarrera"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="@+id/edCarrera"
-        app:layout_constraintTop_toBottomOf="@+id/edCarrera" />
+        app:layout_constraintTop_toBottomOf="@+id/edCarrera"
+        app:layout_constraintVertical_bias="0.101" />
 
     <TextView
         android:id="@+id/textView"
@@ -32,14 +34,13 @@
         android:id="@+id/btnGuardar"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="264dp"
+        android:layout_marginBottom="10dp"
         android:text="Guardar"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/sPOpciones"
-        app:layout_constraintHorizontal_bias="0.521"
-        app:layout_constraintStart_toStartOf="@+id/sPOpciones"
-        app:layout_constraintTop_toBottomOf="@+id/sPOpciones"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
     <EditText
         android:id="@+id/edCarrera"
@@ -69,5 +70,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.93" />
+        app:layout_constraintGuide_percent="0.91" />
 </androidx.constraintlayout.widget.ConstraintLayout>
