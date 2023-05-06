@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item
+    android:id="@+id/spAcademia"
+    android:title="Academia"
+    />
+    <item
+        android:id="@+id/edCarrera"
+        android:title="Carrera"
+        />
+    <item
+        android:id="@+id/reporte_semanal"
+        android:title="Reporte semanal"
+        />
+    <item
+        android:id="@+id/campoaula"
+        android:title="Aulas"
+        />
+
+</menu>

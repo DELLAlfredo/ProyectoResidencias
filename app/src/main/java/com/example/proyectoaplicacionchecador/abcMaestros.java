@@ -1,5 +1,6 @@
 package com.example.proyectoaplicacionchecador;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
@@ -7,6 +8,9 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -190,4 +194,37 @@ public class abcMaestros extends AppCompatActivity {
                 txtNombre.setText("");
                 txtApellidos.setText("");
             }*/
+    public boolean onCreateOptionsMenu(Menu menu) {
+    MenuInflater inflater = getMenuInflater();
+    inflater.inflate(R.menu.opcions_menu, menu);
+    return super.onCreateOptionsMenu(menu);
+    }
+
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.spAcademia:
+                Intent intent =  new Intent(abcMaestros.this, abcAcademia.class);
+                startActivity(intent);
+
+                return true;
+            case R.id.edCarrera:
+                Intent inten =  new Intent(abcMaestros.this, abcCarrera.class);
+                startActivity(inten);
+
+                return true;
+            case R.id.reporte_semanal:
+                Intent inte =  new Intent(abcMaestros.this, ReporteSemanal.class);
+                startActivity(inte);
+
+                return true;
+            case R.id.campoaula:
+                Intent aula =  new Intent(abcMaestros.this, abcAulas.class);
+                startActivity(aula);
+
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
+    }
         }
