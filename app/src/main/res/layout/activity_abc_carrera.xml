@@ -11,19 +11,17 @@
         android:id="@+id/sPOpciones"
         android:layout_width="375dp"
         android:layout_height="43dp"
-        android:layout_marginTop="96dp"
         app:layout_constraintBottom_toTopOf="@+id/btnGuardar"
-        app:layout_constraintEnd_toEndOf="@+id/edCarrera"
-        app:layout_constraintHorizontal_bias="0.515"
-        app:layout_constraintStart_toStartOf="@+id/edCarrera"
-        app:layout_constraintTop_toBottomOf="@+id/edCarrera"
-        app:layout_constraintVertical_bias="0.101" />
+        app:layout_constraintEnd_toEndOf="@+id/_dynamic"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toStartOf="@+id/_dynamic"
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="163dp"
         android:layout_height="52dp"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="48dp"
         android:text="NOMBRE"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,26 +40,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
-    <EditText
-        android:id="@+id/edCarrera"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintHorizontal_bias="0.51"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
     <TextView
         android:id="@+id/textView6"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         android:text="CARRERAS"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -71,4 +57,21 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.91" />
+
+    <ListView
+        android:id="@+id/edCarrera"
+        android:layout_width="332dp"
+        android:layout_height="113dp"
+        android:layout_marginTop="72dp"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.55403554" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -34,9 +34,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 "apellidos TEXT NOT NULL,"+
                 "academia TEXT NOT NULL)");
 
-        sqLiteDatabase.execSQL("create table carreras(id int primary key, nombre text)");
 
-        sqLiteDatabase.execSQL("create table carreras(id int primary key, codigo text)");
 
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_CARRERA + "("+
                 "id_carrera INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, "+
