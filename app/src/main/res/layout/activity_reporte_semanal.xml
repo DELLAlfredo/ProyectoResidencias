@@ -5,7 +5,7 @@
     android:id="@+id/reporte_semanal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#78F4E8"
+    android:background="@drawable/f4"
     tools:context=".ReporteSemanal">
 
     <Spinner

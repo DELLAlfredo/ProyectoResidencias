@@ -11,6 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoAplicacionChecador"
         tools:targetApi="31">
+
+
         <activity
             android:name=".ReporteSemanal"
             android:exported="false" />

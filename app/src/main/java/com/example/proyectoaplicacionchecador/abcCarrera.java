@@ -34,9 +34,6 @@ public class abcCarrera extends AppCompatActivity {
         sPOpciones.setAdapter(Adapter);
 
 
-
-
-
     }
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();

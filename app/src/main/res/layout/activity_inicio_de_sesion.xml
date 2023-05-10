@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3F498A"
+    android:background="@drawable/fondos"
     tools:context=".Inicio_de_sesion">
 
     <TextView
@@ -13,10 +13,10 @@
         android:layout_height="65dp"
         android:layout_marginTop="48dp"
         android:backgroundTint="#FFFFFF"
-        android:text="LOGING"
+        android:text="LOGIN"
+        android:textColor="@color/design_default_color_on_primary"
         android:textSize="48sp"
         android:textStyle="italic"
-        android:textColor="@color/design_default_color_on_primary"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintHorizontal_bias="0.927"
         app:layout_constraintStart_toStartOf="@+id/imageView"
@@ -60,19 +60,19 @@
         android:id="@+id/btnInicarSesion"
         android:layout_width="172dp"
         android:layout_height="50dp"
-        android:layout_marginStart="20dp"
-        android:background="#4CAF50"
-        android:backgroundTint="#1E88E5"
+        android:background="#D81B60"
+        android:backgroundTint="#D81B60"
         android:foregroundTint="#1E88E5"
         android:text="Iniciar Sesion"
         android:textColor="#263238"
         android:textColorHint="#FFFEFE"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/EdUsuario"
-        app:layout_constraintHorizontal_bias="0.196"
+        app:layout_constraintEnd_toEndOf="@+id/EdContraseña"
+        app:layout_constraintHorizontal_bias="0.549"
         app:layout_constraintStart_toStartOf="@+id/EdContraseña"
         app:layout_constraintTop_toBottomOf="@+id/EdContraseña"
-        app:layout_constraintVertical_bias="0.219" />
+        app:layout_constraintVertical_bias="0.22"
+        app:strokeColor="#E53935" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -85,7 +85,7 @@
         app:layout_constraintHorizontal_bias="0.531"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logotec" />
+        app:srcCompat="@drawable/tec" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
