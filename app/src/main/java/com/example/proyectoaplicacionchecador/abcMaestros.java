@@ -40,6 +40,7 @@ public class abcMaestros extends AppCompatActivity {
         spAcademia = findViewById(R.id.spAcademia);
         spCrud = findViewById(R.id.spCrud);
 
+
         String[] abc = {"ISIC","IIND","IGEM","IINA","IIA"};
         ArrayAdapter<String> Adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, abc);
         spAcademia.setAdapter(Adapter);
@@ -49,7 +50,7 @@ public class abcMaestros extends AppCompatActivity {
         spCrud.setAdapter(AdapterCrud);
 
 
-        btnGuardar.setOnClickListener(new View.OnClickListener() {
+       btnGuardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                     switch(spCrud.getSelectedItem().toString()) {
@@ -92,7 +93,7 @@ public class abcMaestros extends AppCompatActivity {
                         Toast.makeText(abcMaestros.this, "REGISTRO GUARDADO", Toast.LENGTH_SHORT).show();
                     }else{
                         Toast.makeText(abcMaestros.this, "NO SE PUDO GUARDAR EL REGISTRO", Toast.LENGTH_SHORT).show();
-                    } */
+                    }*/
                 }
         });
 
