@@ -116,7 +116,7 @@ public class abcMaestros extends AppCompatActivity {
                         registro.put("academia", academia);
 
                         db.insert("t_maestros", null, registro);
-                        //    db.close();
+                        db.close();
                         txtId.setText("");
                         txtApellidos.setText("");
                         txtNombre.setText("");
@@ -188,13 +188,11 @@ public class abcMaestros extends AppCompatActivity {
             }
         }
     }
+         /*private void limpiar () {
+             txtNombre.setText("");
+             txtApellidos.setText("");
+         }*/
 
-
-
-/*            private void limpiar (){
-                txtNombre.setText("");
-                txtApellidos.setText("");
-            }*/
     public boolean onCreateOptionsMenu(Menu menu) {
     MenuInflater inflater = getMenuInflater();
     inflater.inflate(R.menu.opcions_menu, menu);
@@ -209,18 +207,18 @@ public class abcMaestros extends AppCompatActivity {
 
                 return true;
             case R.id.edCarrera:
-                Intent inten =  new Intent(abcMaestros.this, abcCarrera.class);
-                startActivity(inten);
+                Intent carrera_intent =  new Intent(abcMaestros.this, abcCarrera.class);
+                startActivity(carrera_intent);
 
                 return true;
             case R.id.reporte_semanal:
-                Intent inte =  new Intent(abcMaestros.this, ReporteSemanal.class);
-                startActivity(inte);
+                Intent reporte_intent =  new Intent(abcMaestros.this, ReporteSemanal.class);
+                startActivity(reporte_intent);
 
                 return true;
             case R.id.campoaula:
-                Intent aula =  new Intent(abcMaestros.this, abcAulas.class);
-                startActivity(aula);
+                Intent aula_intent =  new Intent(abcMaestros.this, abcAulas.class);
+                startActivity(aula_intent);
 
                 return true;
             case R.id.Salir:
