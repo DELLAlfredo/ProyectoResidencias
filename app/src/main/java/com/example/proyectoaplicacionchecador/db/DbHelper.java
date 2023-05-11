@@ -9,9 +9,6 @@ import androidx.annotation.Nullable;
 import com.example.proyectoaplicacionchecador.abcMaestros;
 
 public class DbHelper extends SQLiteOpenHelper {
-
-    private static final int DATABASE_VERSION = 2;
-    private static final String DATABASE_NOMBRE = "db_checador";
     public static final String TABLE_MAESTROS = "t_maestros";
 
     public static final String TABLE_AULA = "t_aula";
@@ -22,8 +19,8 @@ public class DbHelper extends SQLiteOpenHelper {
 
 
 
-    public DbHelper(abcMaestros abcMaestros, String pos, @Nullable Context context, int i) {
-        super(context, DATABASE_NOMBRE,null, DATABASE_VERSION);
+    public DbHelper(@Nullable Context abcMaestros, @Nullable String POS, @Nullable SQLiteDatabase.CursorFactory factory, int DATABASE_VERSION) {
+        super(abcMaestros, POS, factory, DATABASE_VERSION);
     }
 
     @Override
@@ -33,8 +30,6 @@ public class DbHelper extends SQLiteOpenHelper {
                 "nombre TEXT NOT NULL,"+
                 "apellidos TEXT NOT NULL,"+
                 "academia TEXT NOT NULL)");
-
-
 
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_CARRERA + "("+
                 "id_carrera INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, "+
