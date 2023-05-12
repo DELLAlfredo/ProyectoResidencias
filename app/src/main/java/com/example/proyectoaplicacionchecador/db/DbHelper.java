@@ -23,6 +23,7 @@ public class DbHelper extends SQLiteOpenHelper {
         super(abcMaestros, POS, factory, DATABASE_VERSION);
     }
 
+
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_MAESTROS + "("+

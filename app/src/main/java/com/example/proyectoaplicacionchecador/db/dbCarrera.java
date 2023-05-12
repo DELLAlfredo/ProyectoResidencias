@@ -29,7 +29,7 @@ public class dbCarrera extends SQLiteOpenHelper {
     }
 
 
-    public void agregarCarrera(Editable id_carrera, Editable nombre) {
+    public void insertarCarrera(Editable id_carrera, Editable nombre) {
         SQLiteDatabase db=getWritableDatabase();
         if(db!=null){
             db.execSQL("INSERT INTO CARRERA VALUES ('"+id_carrera+"','"+nombre+"')");
