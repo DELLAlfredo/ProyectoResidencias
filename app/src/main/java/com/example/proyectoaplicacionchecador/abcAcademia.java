@@ -24,7 +24,7 @@ public class abcAcademia extends AppCompatActivity {
 
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
-            case R.id.edCarrera:
+            case R.id.edNOMBRE:
                 Intent inten =  new Intent(abcAcademia.this, abcCarrera.class);
                 startActivity(inten);
 
@@ -40,7 +40,7 @@ public class abcAcademia extends AppCompatActivity {
 
                 return true;
             case R.id.Maestro:
-                Intent maestro =  new Intent(abcAcademia.this, abcAulas.class);
+                Intent maestro =  new Intent(abcAcademia.this, abcMaestros.class);
                 startActivity(maestro);
 
                 return true;

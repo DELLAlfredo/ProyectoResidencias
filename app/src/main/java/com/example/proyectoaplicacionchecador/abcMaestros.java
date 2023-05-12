@@ -206,7 +206,7 @@ public class abcMaestros extends AppCompatActivity {
                 startActivity(intent);
 
                 return true;
-            case R.id.edCarrera:
+            case R.id.edNOMBRE:
                 Intent carrera_intent =  new Intent(abcMaestros.this, abcCarrera.class);
                 startActivity(carrera_intent);
 

@@ -5,7 +5,7 @@
     android:title="Academia"
     />
     <item
-        android:id="@+id/edCarrera"
+        android:id="@+id/edNOMBRE"
         android:title="Carrera"
         />
     <item

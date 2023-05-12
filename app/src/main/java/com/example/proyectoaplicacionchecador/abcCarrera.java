@@ -28,7 +28,6 @@ import com.example.proyectoaplicacionchecador.db.dbCarrera;
 
 public class abcCarrera extends AppCompatActivity {
 
-    private dbCarrera databaseHelper;
     private EditText edNOMBRE,edID;
     private Spinner sPOpciones;
     private Button btnGuardar;
@@ -112,7 +111,7 @@ public class abcCarrera extends AppCompatActivity {
         if (sPOpciones.equals("Eliminar")) {
             DbHelper admin = new DbHelper(abcCarrera.this, "POS", null, 2);
             SQLiteDatabase db = admin.getWritableDatabase();
-            int result = db.delete("t_maestros", "id=" + code, null);
+            int result = db.delete("t_carrera", "id_carrera=" + code, null);
 
             admin.close();
             edID.setText("");
@@ -133,11 +132,11 @@ public class abcCarrera extends AppCompatActivity {
 
             ContentValues registry = new ContentValues();
 
-            registry.put("id", code);
+            registry.put("id_carrera", code);
             registry.put("nombre", nombre);
 
 
-            int result = db.update("t_maestros", registry,"id ="+code, null);
+            int result = db.update("t_carrera", registry,"id_carrera ="+code, null);
             if (result != 0){
                 Toast.makeText(abcCarrera.this, "Registro actualizado", Toast.LENGTH_SHORT).show();
             }else{
@@ -157,11 +156,11 @@ public class abcCarrera extends AppCompatActivity {
                     Toast.makeText(abcCarrera.this, "Codigo ya existente \n elija otro codigo", Toast.LENGTH_LONG).show();
                 } else {
                     ContentValues registro = new ContentValues();
-                    registro.put("id", code);
+                    registro.put("id_carrera", code);
                     registro.put("nombre", nombre);
 
 
-                    db.insert("t_maestros", null, registro);
+                    db.insert("t_carrera", null, registro);
                     db.close();
                     edID.setText("");
                     edNOMBRE.setText("");

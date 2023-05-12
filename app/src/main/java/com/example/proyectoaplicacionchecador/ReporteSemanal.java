@@ -29,7 +29,7 @@ public class ReporteSemanal extends AppCompatActivity {
                 startActivity(intent);
 
                 return true;
-            case R.id.edCarrera:
+            case R.id.edNOMBRE:
                 Intent inten =  new Intent(ReporteSemanal.this, abcCarrera.class);
                 startActivity(inten);
 
