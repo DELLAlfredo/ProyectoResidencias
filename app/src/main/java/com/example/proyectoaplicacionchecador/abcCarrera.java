@@ -152,7 +152,7 @@ public class abcCarrera extends AppCompatActivity {
             if (code != 0) {
                 DbHelper admin = new DbHelper(abcCarrera.this, "POS", null, 2);
                 SQLiteDatabase db = admin.getReadableDatabase();
-                Cursor cursor = db.rawQuery("SELECT id_carrera,nombre from t_carrera where id_carrera =" + code, null);
+                Cursor cursor = db.rawQuery("SELECT id_carrera,nombre from t_carrera where id_carrera ="+code, null);
                 if (cursor.moveToFirst()) {
                     Toast.makeText(abcCarrera.this, "Codigo ya existente \n elija otro codigo", Toast.LENGTH_LONG).show();
                 } else {
