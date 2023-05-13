@@ -16,6 +16,9 @@ import android.widget.ImageButton;
 import android.widget.Spinner;
 
 public class abcAulas extends AppCompatActivity {
+    EditText edNombreAula,edIDAula;
+    Spinner spinerAula;
+    Button btnAceptarAu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +26,15 @@ public class abcAulas extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_abc_aulas);
 
+        edNombreAula = findViewById(R.id.edNombreAula);
+        edIDAula = findViewById(R.id.edIDAula);
+        spinerAula =findViewById(R.id.spinerAula);
+        btnAceptarAu = findViewById(R.id.btnAceptarAu);
+
+
+        String[] crud = {"Añadir","Actualizar","Buscar","Eliminar"};
+        ArrayAdapter<String> AdapterCrud = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, crud);
+        spinerAula.setAdapter(AdapterCrud);
 
 
 
@@ -47,9 +59,9 @@ public class abcAulas extends AppCompatActivity {
                 startActivity(inte);
 
                 return true;
-            case R.id.campoaula:
-                Intent aula =  new Intent(abcAulas.this, abcAulas.class);
-                startActivity(aula);
+            case R.id.edNOMBRE:
+                Intent carrera =  new Intent(abcAulas.this, abcCarrera.class);
+                startActivity(carrera);
 
                 return true;
             case R.id.Maestro:
