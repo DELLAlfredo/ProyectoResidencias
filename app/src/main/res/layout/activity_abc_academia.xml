@@ -29,7 +29,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline6" />
+        app:layout_constraintTop_toTopOf="@+id/guideline6"
+
+        android:backgroundTint="#28E2E8"
+        android:textColor="@color/black"
+        android:textSize="20dp"/>
 
     <TextView
         android:id="@+id/textView2"
