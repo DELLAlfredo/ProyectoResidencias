@@ -23,7 +23,7 @@
     <item
         android:id="@+id/Salir"
         android:title="Cerrar Cuenta"
-        android:background="#E53935"
+        android:titleTextColor="@android:color/holo_red_dark"
         />
 
 </menu>

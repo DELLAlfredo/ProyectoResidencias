@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ProyectoAplicacionChecador</string>
+    <string name="NombreMaestro">Maestro</string>
+    <string name="AULA">Aula</string>
+    <string name="DIOCLASES">Dio Clases</string>
+
 </resources>
