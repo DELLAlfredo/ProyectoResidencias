@@ -54,15 +54,15 @@
     <TableLayout
         android:id="@+id/tabla"
 
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="0dp"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline">
 
-        <TableRow android:background="@color/green">
+        <TableRow android:background="@android:color/holo_green_light">
 
             <TextView
                 android:layout_width="0dp"
