@@ -9,16 +9,15 @@
 
     <TextView
         android:id="@+id/Logingtv"
-        android:layout_width="189dp"
-        android:layout_height="65dp"
-        android:layout_marginTop="48dp"
+        android:layout_width="245dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="44dp"
         android:backgroundTint="#FFFFFF"
-        android:text="LOGIN"
+        android:text="!BIENVENIDO¡"
         android:textColor="@color/design_default_color_on_primary"
-        android:textSize="48sp"
+        android:textSize="40sp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.927"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
@@ -27,14 +26,17 @@
         android:layout_width="245dp"
         android:layout_height="51dp"
         android:layout_marginTop="20dp"
-        android:backgroundTint="#FFFFFF"
-        android:drawableTint="@color/white"
+        android:background="@drawable/custumimput"
+        android:drawableStart="@drawable/user"
         android:ems="10"
+
         android:hint="Ingresa Usuario"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:textColor="@color/design_default_color_on_primary"
-        android:textColorHint="#FDF7F7"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:textColor="@color/black"
+        android:textColorHint="#000000"
         app:layout_constraintEnd_toEndOf="@+id/Logingtv"
         app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="@+id/Logingtv"
@@ -42,15 +44,19 @@
 
     <EditText
         android:id="@+id/EdContraseña"
-        android:layout_width="243dp"
+        android:layout_width="245dp"
         android:layout_height="52dp"
         android:layout_marginTop="28dp"
-        android:backgroundTint="#F6EFEF"
+        android:background="@drawable/custumimput"
+        android:drawableStart="@drawable/password"
         android:ems="10"
         android:hint="Ingresa Contraseña"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:textColorHint="#FFFFFF"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:textColor="@color/black"
+        android:textColorHint="#000000"
         app:layout_constraintEnd_toEndOf="@+id/EdUsuario"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/EdUsuario"
@@ -58,34 +64,38 @@
 
     <Button
         android:id="@+id/btnInicarSesion"
-        android:layout_width="172dp"
+        android:layout_width="245dp"
         android:layout_height="50dp"
-        android:background="#D81B60"
-        android:backgroundTint="#D81B60"
-        android:foregroundTint="#1E88E5"
-        android:text="Iniciar Sesion"
-        android:textColor="#263238"
-        android:textColorHint="#FFFEFE"
+        android:background="@drawable/custombutton"
+        android:text="Iniciar sesión"
+        android:textColor="#fff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/EdContraseña"
         app:layout_constraintHorizontal_bias="0.549"
         app:layout_constraintStart_toStartOf="@+id/EdContraseña"
         app:layout_constraintTop_toBottomOf="@+id/EdContraseña"
         app:layout_constraintVertical_bias="0.22"
-        app:strokeColor="#E53935" />
+
+        />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="187dp"
-        android:layout_height="160dp"
-        android:layout_marginTop="56dp"
+        android:layout_width="222dp"
+        android:layout_height="184dp"
+        android:layout_marginTop="64dp"
         android:adjustViewBounds="false"
         android:clickable="false"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.531"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/tec" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
