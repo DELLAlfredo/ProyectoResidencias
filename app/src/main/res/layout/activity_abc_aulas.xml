@@ -15,30 +15,30 @@
         android:layout_marginTop="60dp"
         android:text="#Aulas"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/edNombreAula"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="@+id/edNombreAula"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/edNombreAula"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="460dp"
+        android:layout_marginBottom="492dp"
         android:ems="10"
         android:hint="Nombre Aula"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/Logingtv"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="@+id/Logingtv"
         app:layout_constraintTop_toBottomOf="@+id/Logingtv"
-        app:layout_constraintVertical_bias="0.732" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <Spinner
         android:id="@+id/spinerAula"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
         app:layout_constraintTop_toTopOf="@+id/guideline4"
         tools:layout_editor_absoluteX="1dp" />
 
@@ -57,12 +57,16 @@
         android:id="@+id/edIDAula"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="68dp"
         android:ems="10"
         android:hint="ID Aula"
         android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toEndOf="@+id/edNombreAula"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/edNombreAula"
-        tools:layout_editor_absoluteY="327dp" />
+        app:layout_constraintTop_toBottomOf="@+id/edNombreAula"
+        app:layout_constraintVertical_bias="0.634" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"

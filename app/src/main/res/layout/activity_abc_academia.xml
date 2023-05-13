@@ -8,33 +8,29 @@
     tools:context=".abcAcademia">
 
     <Spinner
-        android:id="@+id/sPHoraFiltro"
+        android:id="@+id/spinerAcademia"
         android:layout_width="375dp"
         android:layout_height="43dp"
-        android:layout_marginTop="28dp"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName"
-        app:layout_constraintHorizontal_bias="0.43"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toTopOf="@+id/guideline5"
+        tools:layout_editor_absoluteX="16dp" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="398dp"
-        android:layout_height="91dp"
-        android:layout_marginTop="264dp"
-        android:layout_marginBottom="72dp"
-        android:text="Button"
+        android:id="@+id/btnAceptar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Aceptar"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/sPHoraFiltro"
-        app:layout_constraintHorizontal_bias="0.608"
-        app:layout_constraintStart_toStartOf="@+id/sPHoraFiltro"
-        app:layout_constraintTop_toBottomOf="@+id/sPOpciones" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline6" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="163dp"
         android:layout_height="52dp"
-        android:layout_marginTop="132dp"
+        android:layout_marginTop="76dp"
         android:text="NOMBRE"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,16 +39,45 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/etIDacademia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="84dp"
         android:ems="10"
+        android:hint="ID"
         android:inputType="textPersonName"
-        android:text="Name"
         app:layout_constraintEnd_toEndOf="@+id/textView2"
         app:layout_constraintHorizontal_bias="0.468"
         app:layout_constraintStart_toStartOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5759234" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9015048" />
+
+    <EditText
+        android:id="@+id/etCodigo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
+        android:ems="10"
+        android:hint="Codigo"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/guideline5"
+        app:layout_constraintEnd_toEndOf="@+id/etIDacademia"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/etIDacademia"
+        app:layout_constraintTop_toBottomOf="@+id/etIDacademia"
+        app:layout_constraintVertical_bias="0.885" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
