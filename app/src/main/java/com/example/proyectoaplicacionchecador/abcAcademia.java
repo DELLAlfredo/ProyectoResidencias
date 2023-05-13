@@ -89,7 +89,7 @@ public class abcAcademia extends AppCompatActivity {
             if (code != 0) {
                 DbHelper admin = new DbHelper(abcAcademia.this, "POS", null, 2);
                 SQLiteDatabase db = admin.getWritableDatabase();
-                Cursor cursor = db.rawQuery("select id_academia, nombre from t_academia where id_academia=" + code, null);
+                Cursor cursor = db.rawQuery("select id_academia, codigo from t_academia where id_academia=" + code, null);
                 if (cursor.moveToFirst()) {
                     etIDacademia.setText(cursor.getString(0));
                     etCodigo.setText(cursor.getString(1));
@@ -123,7 +123,7 @@ public class abcAcademia extends AppCompatActivity {
         }
     }
 
-    private void edit(int code, String etCodigo, String spinerAcademia) {
+    private void edit(int code, String codigo, String spinerAcademia) {
 
         if (spinerAcademia.equals("Actualizar")) {
             DbHelper admin = new DbHelper(abcAcademia.this, "POS", null, 2);
@@ -132,7 +132,7 @@ public class abcAcademia extends AppCompatActivity {
             ContentValues registry = new ContentValues();
 
             registry.put("id_academia", code);
-            registry.put("codigo", etCodigo);
+            registry.put("codigo", codigo);
 
 
             int result = db.update("t_academia", registry,"id_academia ="+code, null);
@@ -150,7 +150,7 @@ public class abcAcademia extends AppCompatActivity {
             if (code != 0) {
                 DbHelper admin = new DbHelper(abcAcademia.this, "POS", null, 2);
                 SQLiteDatabase db = admin.getReadableDatabase();
-                Cursor cursor = db.rawQuery("SELECT id_academia,nombre from t_academia where id_academia ="+code, null);
+                Cursor cursor = db.rawQuery("SELECT id_academia,codigo from t_academia where id_academia ="+code, null);
                 if (cursor.moveToFirst()) {
                     Toast.makeText(abcAcademia.this, "Codigo ya existente \n elija otro codigo", Toast.LENGTH_LONG).show();
                 } else {
