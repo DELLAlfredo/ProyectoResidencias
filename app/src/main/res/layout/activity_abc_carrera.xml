@@ -16,14 +16,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2"
-        app:layout_constraintVertical_bias="0.412" />
+        app:layout_constraintVertical_bias="0.412"
+
+
+        android:background="@drawable/customspiner"
+        android:textColor="@color/black"
+        />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="163dp"
         android:layout_height="52dp"
+        android:layout_marginTop="36dp"
         android:text="Carreras"
-        android:textSize="34sp"
+        android:textSize="40sp"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -56,30 +63,49 @@
 
     <EditText
         android:id="@+id/edNOMBRE"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="132dp"
+
+        android:layout_width="375dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="88dp"
+        android:background="@drawable/custumimput"
+        android:drawableStart="@drawable/user"
         android:ems="10"
         android:hint="Nombre Carrera"
         android:inputType="textPersonName"
+
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:textColor="@color/black"
+        android:textColorHint="#000000"
         app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+
+        />
 
     <EditText
         android:id="@+id/edID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+
         android:layout_marginTop="44dp"
         android:ems="10"
         android:hint="Id Carrera"
+
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="@+id/edNOMBRE"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/edNOMBRE"
         app:layout_constraintTop_toBottomOf="@+id/edNOMBRE"
-        app:layout_constraintVertical_bias="0.206" />
+        app:layout_constraintVertical_bias="0.206"
+
+        android:background="@drawable/custumimput"
+        android:drawableStart="@drawable/user"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:textColor="@color/black"
+        android:textColorHint="#000000"
+        android:layout_width="375dp"
+        android:layout_height="60dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
