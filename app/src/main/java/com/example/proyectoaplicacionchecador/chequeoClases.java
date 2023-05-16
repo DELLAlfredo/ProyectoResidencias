@@ -16,6 +16,8 @@ public class chequeoClases extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chequeo_clases);
     }
+
+    
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.opcions_menu, menu);
@@ -45,7 +47,7 @@ public class chequeoClases extends AppCompatActivity {
 
                 return true;
             case R.id.Maestro:
-                Intent maestro =  new Intent(chequeoClases.this, abcAulas.class);
+                Intent maestro =  new Intent(chequeoClases.this, abcMaestros.class);
                 startActivity(maestro);
 
                 return true;
@@ -54,6 +56,9 @@ public class chequeoClases extends AppCompatActivity {
                 startActivity(salir);
 
                 return true;
+            case R.id.chequeoClases:
+                Intent clases =  new Intent(chequeoClases.this, chequeoClases.class);
+                startActivity(clases);
 
             default:
                 return super.onOptionsItemSelected(item);

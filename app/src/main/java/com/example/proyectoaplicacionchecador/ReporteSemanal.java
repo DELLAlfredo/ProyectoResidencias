@@ -45,7 +45,7 @@ public class ReporteSemanal extends AppCompatActivity {
 
                 return true;
             case R.id.Maestro:
-                Intent maestro =  new Intent(ReporteSemanal.this, abcAulas.class);
+                Intent maestro =  new Intent(ReporteSemanal.this, abcMaestros.class);
                 startActivity(maestro);
                 return true;
             case R.id.Salir:
@@ -53,6 +53,9 @@ public class ReporteSemanal extends AppCompatActivity {
                 startActivity(salir);
 
                 return true;
+            case R.id.chequeoClases:
+                Intent clases =  new Intent(ReporteSemanal.this, chequeoClases.class);
+                startActivity(clases);
             default:
                 return super.onOptionsItemSelected(item);
         }
