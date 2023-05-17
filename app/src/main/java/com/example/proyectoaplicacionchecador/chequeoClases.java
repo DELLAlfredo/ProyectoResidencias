@@ -8,13 +8,26 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
 
 public class chequeoClases extends AppCompatActivity {
+    Button btnguardarclase;
+    Spinner  SpAula, SpHORA,SpDocente,SpAction;
+    EditText etclases;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chequeo_clases);
+
+        btnguardarclase = findViewById(R.id.btnguardarclase);
+        SpAula = findViewById(R.id.SpAula);
+        SpHORA = findViewById(R.id.SpHORA);
+        SpDocente = findViewById(R.id.SpDocente);
+        SpAction = findViewById(R.id.SpAction);
+        etclases = findViewById(R.id.etclases);
     }
 
     
@@ -23,6 +36,10 @@ public class chequeoClases extends AppCompatActivity {
         inflater.inflate(R.menu.opcions_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
+
+
+
+
 
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
