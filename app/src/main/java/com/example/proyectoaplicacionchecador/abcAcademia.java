@@ -210,6 +210,9 @@ public class abcAcademia extends AppCompatActivity {
                 startActivity(salir);
 
                 return true;
+            case R.id.chequeoClases:
+                Intent clases =  new Intent(abcAcademia.this, chequeoClases.class);
+                startActivity(clases);
             default:
                 return super.onOptionsItemSelected(item);
         }

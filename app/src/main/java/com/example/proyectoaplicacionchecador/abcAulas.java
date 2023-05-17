@@ -210,6 +210,9 @@ public class abcAulas extends AppCompatActivity {
                 startActivity(salir);
 
                 return true;
+            case R.id.chequeoClases:
+                Intent clases =  new Intent(abcAulas.this, chequeoClases.class);
+                startActivity(clases);
             default:
                 return super.onOptionsItemSelected(item);
         }
