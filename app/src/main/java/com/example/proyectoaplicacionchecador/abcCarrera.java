@@ -1,11 +1,5 @@
 package com.example.proyectoaplicacionchecador;
 
-import static android.graphics.Insets.add;
-
-import static androidx.core.content.SharedPreferencesKt.edit;
-
-import static java.nio.file.Files.delete;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -22,11 +16,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.content.ContentValues;
-import android.widget.AdapterView;
 import android.widget.Toast;
 
 import com.example.proyectoaplicacionchecador.db.DbHelper;
-import com.example.proyectoaplicacionchecador.db.dbCarrera;
 
 public class abcCarrera extends AppCompatActivity {
 

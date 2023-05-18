@@ -1,11 +1,5 @@
 package com.example.proyectoaplicacionchecador;
 
-import static android.graphics.Insets.add;
-
-import static androidx.core.content.SharedPreferencesKt.edit;
-
-import static java.nio.file.Files.delete;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,7 +15,6 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
