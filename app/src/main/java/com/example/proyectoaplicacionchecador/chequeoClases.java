@@ -2,19 +2,24 @@ package com.example.proyectoaplicacionchecador;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cursoradapter.widget.SimpleCursorAdapter;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
+import android.telephony.TelephonyCallback;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Toast;
+
+import com.example.proyectoaplicacionchecador.db.DbHelper;
 
 public class chequeoClases extends AppCompatActivity {
+    private DbHelper dbHelper;
+    private Spinner spinnerAula;
     Button btnguardarclase;
     Spinner  SpAula, SpHORA,SpDocente,SpAction;
     EditText etclases;
@@ -30,6 +35,24 @@ public class chequeoClases extends AppCompatActivity {
         SpDocente = findViewById(R.id.SpDocente);
         SpAction = findViewById(R.id.SpAction);
         etclases = findViewById(R.id.etclases);
+
+
+        dbHelper = new DbHelper(this);
+        spinnerAula = findViewById(R.id.SpAula);
+
+        Cursor cursor = dbHelper.getSpinnerData();
+        String[] fromColumns = {"nombre"}; // Cambia "nombre_aula" al nombre real del campo que deseas mostrar en el Spinner
+        int[] toViews = {android.R.id.text1}; // Puedes cambiar android.R.id.text1 al ID de tu propio TextView en el diseño del elemento del Spinner
+
+        SimpleCursorAdapter adapter = new SimpleCursorAdapter(this, android.R.layout.simple_spinner_item, cursor, fromColumns, toViews, 1);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerAula.setAdapter(adapter);
+    }
+    protected void onDestroy() {
+        super.onDestroy();
+        if (dbHelper != null) {
+            dbHelper.close();
+        }
     }
 
     

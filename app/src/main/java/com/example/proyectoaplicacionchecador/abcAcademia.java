@@ -1,11 +1,5 @@
 package com.example.proyectoaplicacionchecador;
 
-import static android.graphics.Insets.add;
-
-import static androidx.core.content.SharedPreferencesKt.edit;
-
-import static java.nio.file.Files.delete;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
