@@ -8,9 +8,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class chequeoClases extends AppCompatActivity {
     Button btnguardarclase;
@@ -36,9 +38,6 @@ public class chequeoClases extends AppCompatActivity {
         inflater.inflate(R.menu.opcions_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
-
-
-
 
 
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
