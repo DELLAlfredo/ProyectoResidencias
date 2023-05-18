@@ -12,10 +12,10 @@
         android:id="@+id/Logingtv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="#Aulas"
-        android:textSize="40sp"
+        android:layout_marginTop="24dp"
+        android:text="Aulas"
         android:textColor="@color/white"
+        android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -38,7 +38,6 @@
         android:textColorHint="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/Logingtv"
-        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="@+id/Logingtv"
         app:layout_constraintTop_toBottomOf="@+id/Logingtv"
         app:layout_constraintVertical_bias="1.0" />
@@ -48,12 +47,12 @@
         android:layout_width="375dp"
         android:layout_height="60dp"
         android:layout_marginTop="48dp"
-        android:layout_marginEnd="16dp"
         android:background="@drawable/customspiner"
 
 
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline4" />
 
     <Button
@@ -61,9 +60,13 @@
         android:layout_width="149dp"
         android:layout_height="58dp"
         android:layout_marginTop="60dp"
+        android:backgroundTint="#28E2E8"
         android:text="Aceptar"
+        android:textColor="@color/black"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinerAula"
         app:layout_constraintVertical_bias="0.0" />
@@ -88,7 +91,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/edNombreAula"
         app:layout_constraintTop_toBottomOf="@+id/edNombreAula"
-        app:layout_constraintVertical_bias="0.634" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
@@ -102,5 +105,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5" />
+        app:layout_constraintGuide_begin="206dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

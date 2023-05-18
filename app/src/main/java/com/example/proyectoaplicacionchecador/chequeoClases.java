@@ -8,19 +8,37 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 public class chequeoClases extends AppCompatActivity {
+    Button btnguardarclase;
+    Spinner  SpAula, SpHORA,SpDocente,SpAction;
+    EditText etclases;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chequeo_clases);
+
+        btnguardarclase = findViewById(R.id.btnguardarclase);
+        SpAula = findViewById(R.id.SpAula);
+        SpHORA = findViewById(R.id.SpHORA);
+        SpDocente = findViewById(R.id.SpDocente);
+        SpAction = findViewById(R.id.SpAction);
+        etclases = findViewById(R.id.etclases);
     }
+
+    
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.opcions_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
+
 
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
@@ -45,7 +63,7 @@ public class chequeoClases extends AppCompatActivity {
 
                 return true;
             case R.id.Maestro:
-                Intent maestro =  new Intent(chequeoClases.this, abcAulas.class);
+                Intent maestro =  new Intent(chequeoClases.this, abcMaestros.class);
                 startActivity(maestro);
 
                 return true;
@@ -54,6 +72,9 @@ public class chequeoClases extends AppCompatActivity {
                 startActivity(salir);
 
                 return true;
+            case R.id.chequeoClases:
+                Intent clases =  new Intent(chequeoClases.this, chequeoClases.class);
+                startActivity(clases);
 
             default:
                 return super.onOptionsItemSelected(item);

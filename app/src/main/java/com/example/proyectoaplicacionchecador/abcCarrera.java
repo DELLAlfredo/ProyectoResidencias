@@ -208,6 +208,9 @@ public class abcCarrera extends AppCompatActivity {
                 startActivity(salir);
 
                 return true;
+            case R.id.chequeoClases:
+                Intent clases =  new Intent(abcCarrera.this, chequeoClases.class);
+                startActivity(clases);
             default:
                 return super.onOptionsItemSelected(item);
         }

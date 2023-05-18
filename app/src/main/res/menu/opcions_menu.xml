@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-<item
+    <item
+        android:id="@+id/chequeoClases"
+        android:title="Clases"
+        />
+
+    <item
     android:id="@+id/spAcademia"
     android:title="Academia"
     />
+
+
     <item
         android:id="@+id/edNOMBRE"
         android:title="Carrera"
