@@ -4,38 +4,27 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cursoradapter.widget.SimpleCursorAdapter;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.telephony.TelephonyCallback;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.Spinner;
 
 import com.example.proyectoaplicacionchecador.db.DbHelper;
 
-import java.util.ArrayList;
+import java.util.stream.IntStream;
 
 public class chequeoClases extends AppCompatActivity {
-    private DbHelper dbHelper;
-     Spinner spinnerAula;
+    DbHelper dbHelper;
+    Spinner spinnerAula;
     Button btnguardarclase;
     Spinner  SpAula, SpHORA,SpDocente,SpAction;
     EditText etclases;
-
-
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,11 +39,41 @@ public class chequeoClases extends AppCompatActivity {
         etclases = findViewById(R.id.etclases);
 
 
+        dbHelper = new DbHelper(this);
+        spinnerAula = findViewById(R.id.SpAula);
+        DbHelper dbHelper = new DbHelper(this);
 
 
+        Cursor cursor = dbHelper.getSpinnerData();
+        String[] ids = {"_id"};
+        String[] nombres = {"nombre"};
+
+
+        int[] toViews = {android.R.id.text1};
+
+        SimpleCursorAdapter adapter = new SimpleCursorAdapter(this, android.R.layout.simple_spinner_item, cursor, nombres, toViews, 0);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        Spinner spinnerAula = findViewById(R.id.SpAula);
+        spinnerAula.setAdapter(adapter);
     }
 
-        public boolean onCreateOptionsMenu(Menu menu) {
+    public static String[] concatenarArrays(String[] arreglo1, String[] arreglo2) {
+        int longitud = Math.min(arreglo1.length, arreglo2.length);
+
+        return IntStream.range(0, longitud)
+                .mapToObj(i -> arreglo1[i] +" - " + arreglo2[i])
+                .toArray(String[]::new);
+    }
+
+    protected void onDestroy() {
+        super.onDestroy();
+        if (dbHelper != null) {
+            dbHelper.close();
+        }
+    }
+
+
+    public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.opcions_menu, menu);
         return super.onCreateOptionsMenu(menu);
