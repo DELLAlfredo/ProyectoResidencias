@@ -33,7 +33,7 @@ public class DbHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_MAESTROS + "("+
-                "id_maestro INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, "+
+                "_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, "+
                 "nombre TEXT NOT NULL,"+
                 "apellidos TEXT NOT NULL,"+
                 "academia TEXT NOT NULL)");
@@ -61,12 +61,7 @@ public class DbHelper extends SQLiteOpenHelper {
         String tableName = "t_aula"; // Cambia "tabla_aulas" al nombre real de la tabla que deseas consultar
         return db.query(tableName, projection, null, null, null, null, null);
     }
-    public Cursor getSpinnerDatas() {
-        SQLiteDatabase db = getReadableDatabase();
-        String[] projection = {"_id","nombre"}; // Cambia "nombre_aula" al nombre real del campo que deseas mostrar en el Spinner
-        String tableName = "t_aula"; // Cambia "tabla_aulas" al nombre real de la tabla que deseas consultar
-        return db.query(tableName, projection, null, null, null, null, null);
-    }
+
 
 
     @Override

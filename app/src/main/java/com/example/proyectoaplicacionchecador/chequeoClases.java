@@ -43,7 +43,7 @@ public class chequeoClases extends AppCompatActivity {
         spinnerAula = findViewById(R.id.SpAula);
         DbHelper dbHelper = new DbHelper(this);
 
-        DbHelper maaestro = new DbHelper(this);
+
 
 
         Cursor cursor = dbHelper.getSpinnerData();
@@ -57,6 +57,10 @@ public class chequeoClases extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         Spinner spinnerAula = findViewById(R.id.SpAula);
         spinnerAula.setAdapter(adapter);
+
+
+
+
     }
 
 
@@ -67,6 +71,7 @@ public class chequeoClases extends AppCompatActivity {
             dbHelper.close();
         }
     }
+
 
 
     public boolean onCreateOptionsMenu(Menu menu) {
