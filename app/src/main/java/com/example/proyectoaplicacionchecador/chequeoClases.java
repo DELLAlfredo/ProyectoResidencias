@@ -6,22 +6,28 @@ import androidx.cursoradapter.widget.SimpleCursorAdapter;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.telephony.TelephonyCallback;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.example.proyectoaplicacionchecador.db.DbHelper;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.IntStream;
 
 public class chequeoClases extends AppCompatActivity {
-    DbHelper dbHelper, maaestro;
+
+    DbHelper dbHelper,dbHelpere;
     Spinner spinnerAula;
+    Spinner spinnerMaestro;
     Button btnguardarclase;
     Spinner  SpAula, SpHORA,SpDocente,SpAction;
     EditText etclases;
@@ -38,30 +44,41 @@ public class chequeoClases extends AppCompatActivity {
         SpAction = findViewById(R.id.SpAction);
         etclases = findViewById(R.id.etclases);
 
-
+        ////////////////////////Aulas////////////////////////////////////////////////////////
         dbHelper = new DbHelper(this);
         spinnerAula = findViewById(R.id.SpAula);
         DbHelper dbHelper = new DbHelper(this);
 
-
-
-
         Cursor cursor = dbHelper.getSpinnerData();
         String[] ids = {"_id"};
         String[] nombres = {"nombre"};
-
-
         int[] toViews = {android.R.id.text1};
-
         SimpleCursorAdapter adapter = new SimpleCursorAdapter(this, android.R.layout.simple_spinner_item, cursor,nombres, toViews, 0);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         Spinner spinnerAula = findViewById(R.id.SpAula);
         spinnerAula.setAdapter(adapter);
+/////////////////////////////////////////////////////////////////
+        String[] horas = {"7AM-8AM","8AM-9AM","9AM-10AM","10AM-11AM","11AM-12AM","12AM-1PM","1PM-2PM","2PM-3PM"};
+        ArrayAdapter<String> Adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, horas);
+        SpHORA.setAdapter(Adapter);
 
 
+    ///////////////////Maestros///////////////////////////////////////////////////
 
+        dbHelpere = new DbHelper(this);
+        spinnerMaestro = findViewById(R.id.SpDocente);
+        DbHelper dbHelpere = new DbHelper(this);
+
+        Cursor cursore = dbHelpere.getSpinnerDatas("maestro");
+        String[] nombres1 = {"nombre"};
+        int[] toViewse = {android.R.id.text1};
+        SimpleCursorAdapter adaptere = new SimpleCursorAdapter(this, android.R.layout.simple_spinner_item, cursore,nombres1, toViewse, 0);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        Spinner spinnerMaestro = findViewById(R.id.SpDocente);
+        spinnerMaestro.setAdapter(adaptere);
 
     }
+
 
 
 

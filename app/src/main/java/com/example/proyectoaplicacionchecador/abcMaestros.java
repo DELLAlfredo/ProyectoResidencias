@@ -105,12 +105,12 @@ public class abcMaestros extends AppCompatActivity {
                 if (code != 0) {
                     DbHelper admin = new DbHelper(abcMaestros.this, "POS", null, 2);
                     SQLiteDatabase db = admin.getReadableDatabase();
-                    Cursor cursor = db.rawQuery("SELECT nombre,apellidos, academia from t_maestros where id_maestro=" + code, null);
+                    Cursor cursor = db.rawQuery("SELECT nombre,apellidos, academia from t_maestros where _id=" + code, null);
                     if (cursor.moveToFirst()) {
                         Toast.makeText(abcMaestros.this, "Codigo ya existente \n elija otro codigo", Toast.LENGTH_LONG).show();
                     } else {
                         ContentValues registro = new ContentValues();
-                        registro.put("id_maestro", code);
+                        registro.put("_id", code);
                         registro.put("nombre", nombre);
                         registro.put("apellidos", apellidos);
                         registro.put("academia", academia);
@@ -136,12 +136,12 @@ public class abcMaestros extends AppCompatActivity {
 
                         ContentValues registry = new ContentValues();
 
-                        registry.put("id_maestro", code);
+                        registry.put("_id", code);
                         registry.put("nombre", nombre);
                         registry.put("apellidos", apellidos);
                         registry.put("academia", academia);
 
-                       int result = db.update("t_maestros", registry,"id ="+code, null);
+                       int result = db.update("t_maestros", registry,"_id ="+code, null);
                 if (result != 0){
                     Toast.makeText(abcMaestros.this, "Registro actualizado", Toast.LENGTH_SHORT).show();
                 }else{
@@ -153,7 +153,7 @@ public class abcMaestros extends AppCompatActivity {
             if (spCrud.equals("Eliminar")) {
                 DbHelper admin = new DbHelper(abcMaestros.this, "POS", null, 2);
                 SQLiteDatabase db = admin.getWritableDatabase();
-                int result = db.delete("t_maestros", "id_maestro=" + code, null);
+                int result = db.delete("t_maestros", "_id=" + code, null);
 
                 admin.close();
                 txtNombre.setText("");
@@ -172,7 +172,7 @@ public class abcMaestros extends AppCompatActivity {
             if (code != 0) {
                 DbHelper admin = new DbHelper(abcMaestros.this, "POS", null, 2);
                 SQLiteDatabase db = admin.getWritableDatabase();
-                Cursor cursor = db.rawQuery("select nombre, apellidos from t_maestros where id_maestro=" + code, null);
+                Cursor cursor = db.rawQuery("select nombre, apellidos from t_maestros where _id=" + code, null);
                 if (cursor.moveToFirst()) {
                     txtNombre.setText(cursor.getString(0));
                     txtApellidos.setText(cursor.getString(1));

@@ -64,10 +64,18 @@ public class DbHelper extends SQLiteOpenHelper {
 
 
 
+
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         sqLiteDatabase.execSQL("DROP TABLE " + TABLE_MAESTROS);
         onCreate(sqLiteDatabase);
     }
 
+    public Cursor getSpinnerDatas(String maestro) {
+        SQLiteDatabase DB = getReadableDatabase();
+        String[] projection = {"_id","nombre"}; // Cambia "nombre_aula" al nombre real del campo que deseas mostrar en el Spinner
+        String tableName = "t_maestros"; // Cambia "tabla_aulas" al nombre real de la tabla que deseas consultar
+        return DB.query(tableName, projection, null, null, null, null, null);
+
+    }
 }
