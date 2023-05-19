@@ -52,7 +52,7 @@
         android:ems="10"
         android:hint="Ingresa Contraseña"
         android:inputType="textPassword"
-        android:minHeight="48dp"
+        app:endIconMode="password_toggle"
         android:paddingStart="16dp"
         android:paddingEnd="12dp"
         android:textColor="@color/black"

@@ -45,37 +45,37 @@ public class abcAulas extends AppCompatActivity {
         btnAceptarAu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                    switch(spinerAula.getSelectedItem().toString()) {
-                        case "Añadir":
-                            if (!edIDAula.getText().toString().isEmpty() &&
-                                    !edNombreAula.getText().toString().isEmpty()) {
-                                add(Integer.parseInt(edIDAula.getText().toString()), edNombreAula.getText().toString(),spinerAula.getSelectedItem().toString());
-                            }else{
-                                Toast.makeText(abcAulas.this, "Debes llenar los demas campos", Toast.LENGTH_SHORT).show();
-                            }
-                            break;
-                        case "Actualizar":
-                            if (!edIDAula.getText().toString().isEmpty() &&
-                                    !edNombreAula.getText().toString().isEmpty()) {
-                                edit(Integer.parseInt(edIDAula.getText().toString()), edNombreAula.getText().toString(),spinerAula.getSelectedItem().toString());
-                            }else{
-                                Toast.makeText(abcAulas.this, "Los campos estan vacios", Toast.LENGTH_SHORT).show();
-                            }
-                            break;
-                        case "Eliminar":
-                            if(!edIDAula.getText().toString().isEmpty()){
-                                delete(Integer.parseInt(edIDAula.getText().toString()), spinerAula.getSelectedItem().toString());
-                            }
-                            break;
-                        case "Buscar":
-                            if(!edIDAula.getText().toString().isEmpty()){
-                                search(Integer.parseInt(edIDAula.getText().toString()), spinerAula.getSelectedItem().toString());
-                            }
-                            break;
-
-                    }
+                switch(spinerAula.getSelectedItem().toString()) {
+                    case "Añadir":
+                        if (!edIDAula.getText().toString().isEmpty() &&
+                                !edNombreAula.getText().toString().isEmpty()) {
+                            add(Integer.parseInt(edIDAula.getText().toString()), edNombreAula.getText().toString(),spinerAula.getSelectedItem().toString());
+                        }else{
+                            Toast.makeText(abcAulas.this, "Debes llenar los demas campos", Toast.LENGTH_SHORT).show();
+                        }
+                        break;
+                    case "Actualizar":
+                        if (!edIDAula.getText().toString().isEmpty() &&
+                                !edNombreAula.getText().toString().isEmpty()) {
+                            edit(Integer.parseInt(edIDAula.getText().toString()), edNombreAula.getText().toString(),spinerAula.getSelectedItem().toString());
+                        }else{
+                            Toast.makeText(abcAulas.this, "Los campos estan vacios", Toast.LENGTH_SHORT).show();
+                        }
+                        break;
+                    case "Eliminar":
+                        if(!edIDAula.getText().toString().isEmpty()){
+                            delete(Integer.parseInt(edIDAula.getText().toString()), spinerAula.getSelectedItem().toString());
+                        }
+                        break;
+                    case "Buscar":
+                        if(!edIDAula.getText().toString().isEmpty()){
+                            search(Integer.parseInt(edIDAula.getText().toString()), spinerAula.getSelectedItem().toString());
+                        }
+                        break;
 
                 }
+
+            }
 
         });
 
