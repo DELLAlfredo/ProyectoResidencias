@@ -87,7 +87,7 @@ public class abcAulas extends AppCompatActivity {
             if (code != 0) {
                 DbHelper admin = new DbHelper(abcAulas.this, "POS", null, 2);
                 SQLiteDatabase db = admin.getWritableDatabase();
-                Cursor cursor = db.rawQuery("select id_aula, nombre from t_aula where id_aula=" + code, null);
+                Cursor cursor = db.rawQuery("select _id, nombre from t_aula where _id=" + code, null);
                 if (cursor.moveToFirst()) {
                     edIDAula.setText(cursor.getString(0));
                     edNombreAula.setText(cursor.getString(1));
@@ -107,7 +107,7 @@ public class abcAulas extends AppCompatActivity {
         if (spinerAula.equals("Eliminar")) {
             DbHelper admin = new DbHelper(abcAulas.this, "POS", null, 2);
             SQLiteDatabase db = admin.getWritableDatabase();
-            int result = db.delete("t_aula", "id_aula=" + code, null);
+            int result = db.delete("t_aula", "_id=" + code, null);
 
             admin.close();
             edIDAula.setText("");
@@ -128,11 +128,11 @@ public class abcAulas extends AppCompatActivity {
 
             ContentValues registry = new ContentValues();
 
-            registry.put("id_aula", code);
+            registry.put("_id", code);
             registry.put("nombre", nombre);
 
 
-            int result = db.update("t_aula", registry,"id_aula ="+code, null);
+            int result = db.update("t_aula", registry,"_id ="+code, null);
             if (result != 0){
                 Toast.makeText(abcAulas.this, "Registro actualizado", Toast.LENGTH_SHORT).show();
             }else{
@@ -147,12 +147,12 @@ public class abcAulas extends AppCompatActivity {
             if (code != 0) {
                 DbHelper admin = new DbHelper(abcAulas.this, "POS", null, 2);
                 SQLiteDatabase db = admin.getReadableDatabase();
-                Cursor cursor = db.rawQuery("SELECT id_aula,nombre from t_aula where id_aula ="+code, null);
+                Cursor cursor = db.rawQuery("SELECT _id,nombre from t_aula where _id ="+code, null);
                 if (cursor.moveToFirst()) {
                     Toast.makeText(abcAulas.this, "Codigo ya existente \n elija otro codigo", Toast.LENGTH_LONG).show();
                 } else {
                     ContentValues registro = new ContentValues();
-                    registro.put("id_aula", code);
+                    registro.put("_id", code);
                     registro.put("nombre", nombre);
 
 

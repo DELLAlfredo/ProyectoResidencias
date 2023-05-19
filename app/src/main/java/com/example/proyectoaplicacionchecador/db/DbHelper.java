@@ -8,10 +8,11 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 import com.example.proyectoaplicacionchecador.abcMaestros;
+import com.example.proyectoaplicacionchecador.chequeoClases;
 
 public class DbHelper extends SQLiteOpenHelper {
-    private static final String DATABASE_NAME = "mydatabase.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final String DATABASE_NAME = "POS";
+    private static final int DATABASE_VERSION = 2;
     public static final String TABLE_MAESTROS = "t_maestros";
 
     public static final String TABLE_AULA = "t_aula";
@@ -21,13 +22,14 @@ public class DbHelper extends SQLiteOpenHelper {
 
 
     public DbHelper(Context context) {
-        super(context, DATABASE_NAME, null, DATABASE_VERSION);
-    }
+      super(context, DATABASE_NAME, null, DATABASE_VERSION);
+   }
 
     public DbHelper(@Nullable Context abcMaestros, @Nullable String POS, @Nullable SQLiteDatabase.CursorFactory factory, int DATABASE_VERSION) {
         super(abcMaestros, POS, factory, DATABASE_VERSION);
 
     }
+
 
 
 
@@ -53,12 +55,12 @@ public class DbHelper extends SQLiteOpenHelper {
                 "contraseña TEXT NOT NULL)");
 
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_AULA + "("+
-                "id_aula INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, "+
+                "_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, "+
                 "nombre TEXT NOT NULL)");
     }
     public Cursor getSpinnerData() {
         SQLiteDatabase db = getReadableDatabase();
-        String[] projection = {"nombre"}; // Cambia "nombre_aula" al nombre real del campo que deseas mostrar en el Spinner
+        String[] projection = {"_id","nombre"}; // Cambia "nombre_aula" al nombre real del campo que deseas mostrar en el Spinner
         String tableName = "t_aula"; // Cambia "tabla_aulas" al nombre real de la tabla que deseas consultar
         return db.query(tableName, projection, null, null, null, null, null);
     }

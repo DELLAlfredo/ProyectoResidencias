@@ -17,17 +17,14 @@ import android.widget.Spinner;
 
 import com.example.proyectoaplicacionchecador.db.DbHelper;
 
-import java.util.ArrayList;
+import java.util.stream.IntStream;
 
 public class chequeoClases extends AppCompatActivity {
-     DbHelper dbHelper;
-     Spinner spinnerAula;
+    DbHelper dbHelper;
+    Spinner spinnerAula;
     Button btnguardarclase;
     Spinner  SpAula, SpHORA,SpDocente,SpAction;
     EditText etclases;
-
-    ArrayList<String > docente;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,20 +41,30 @@ public class chequeoClases extends AppCompatActivity {
 
         dbHelper = new DbHelper(this);
         spinnerAula = findViewById(R.id.SpAula);
+        DbHelper dbHelper = new DbHelper(this);
+
 
         Cursor cursor = dbHelper.getSpinnerData();
+        String[] ids = {"_id"};
+        String[] nombres = {"nombre"};
 
 
-        String[] fromColumns = {spinnerAula.getSelectedItem().toString()}; // Cambia "nombre_aula" al nombre real del campo que deseas mostrar en el Spinner
-        int[] toViews = {android.R.id.text1}; // Puedes cambiar android.R.id.text1 al ID de tu propio TextView en el diseño del elemento del Spinner
-        SimpleCursorAdapter adapter = new SimpleCursorAdapter(this, android.R.layout.simple_spinner_item, cursor, fromColumns, toViews, 0);
+        int[] toViews = {android.R.id.text1};
+
+        SimpleCursorAdapter adapter = new SimpleCursorAdapter(this, android.R.layout.simple_spinner_item, cursor, nombres, toViews, 0);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        Spinner spinnerAula = findViewById(R.id.SpAula);
         spinnerAula.setAdapter(adapter);
-
-
-
-
     }
+
+    public static String[] concatenarArrays(String[] arreglo1, String[] arreglo2) {
+        int longitud = Math.min(arreglo1.length, arreglo2.length);
+
+        return IntStream.range(0, longitud)
+                .mapToObj(i -> arreglo1[i] +" - " + arreglo2[i])
+                .toArray(String[]::new);
+    }
+
     protected void onDestroy() {
         super.onDestroy();
         if (dbHelper != null) {
@@ -65,7 +72,7 @@ public class chequeoClases extends AppCompatActivity {
         }
     }
 
-    
+
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.opcions_menu, menu);
