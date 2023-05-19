@@ -20,7 +20,7 @@ import com.example.proyectoaplicacionchecador.db.DbHelper;
 import java.util.stream.IntStream;
 
 public class chequeoClases extends AppCompatActivity {
-    DbHelper dbHelper;
+    DbHelper dbHelper, maaestro;
     Spinner spinnerAula;
     Button btnguardarclase;
     Spinner  SpAula, SpHORA,SpDocente,SpAction;
@@ -43,6 +43,8 @@ public class chequeoClases extends AppCompatActivity {
         spinnerAula = findViewById(R.id.SpAula);
         DbHelper dbHelper = new DbHelper(this);
 
+        DbHelper maaestro = new DbHelper(this);
+
 
         Cursor cursor = dbHelper.getSpinnerData();
         String[] ids = {"_id"};
@@ -51,19 +53,13 @@ public class chequeoClases extends AppCompatActivity {
 
         int[] toViews = {android.R.id.text1};
 
-        SimpleCursorAdapter adapter = new SimpleCursorAdapter(this, android.R.layout.simple_spinner_item, cursor, nombres, toViews, 0);
+        SimpleCursorAdapter adapter = new SimpleCursorAdapter(this, android.R.layout.simple_spinner_item, cursor,nombres, toViews, 0);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         Spinner spinnerAula = findViewById(R.id.SpAula);
         spinnerAula.setAdapter(adapter);
     }
 
-    public static String[] concatenarArrays(String[] arreglo1, String[] arreglo2) {
-        int longitud = Math.min(arreglo1.length, arreglo2.length);
 
-        return IntStream.range(0, longitud)
-                .mapToObj(i -> arreglo1[i] +" - " + arreglo2[i])
-                .toArray(String[]::new);
-    }
 
     protected void onDestroy() {
         super.onDestroy();
