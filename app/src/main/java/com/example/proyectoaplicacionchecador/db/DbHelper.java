@@ -22,8 +22,8 @@ public class DbHelper extends SQLiteOpenHelper {
 
 
     public DbHelper(Context context) {
-      super(context, DATABASE_NAME, null, DATABASE_VERSION);
-   }
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    }
 
     public DbHelper(@Nullable Context abcMaestros, @Nullable String POS, @Nullable SQLiteDatabase.CursorFactory factory, int DATABASE_VERSION) {
         super(abcMaestros, POS, factory, DATABASE_VERSION);
