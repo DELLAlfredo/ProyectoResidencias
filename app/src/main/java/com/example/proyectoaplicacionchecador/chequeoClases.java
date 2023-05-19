@@ -62,6 +62,7 @@ public class chequeoClases extends AppCompatActivity {
         ArrayAdapter<String> Adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, horas);
         SpHORA.setAdapter(Adapter);
 
+        ///////////////////Maestros///////////////////////////////////////////////////
 
     ///////////////////Maestros///////////////////////////////////////////////////
 
@@ -77,6 +78,10 @@ public class chequeoClases extends AppCompatActivity {
         Spinner spinnerMaestro = findViewById(R.id.SpDocente);
         spinnerMaestro.setAdapter(adaptere);
 
+        //crud
+        String[] crud = {"IMPARTIDA","NO IMPARTIDA","CLASE INCOMPLETA","SUSPENCION"};
+        ArrayAdapter<String> AdapterCrud = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, crud);
+        SpAction.setAdapter(AdapterCrud);
     }
 
 
@@ -88,6 +93,7 @@ public class chequeoClases extends AppCompatActivity {
             dbHelper.close();
         }
     }
+
 
 
 
