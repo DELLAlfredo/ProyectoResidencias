@@ -9,13 +9,16 @@ import android.database.Cursor;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.telephony.TelephonyCallback;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.proyectoaplicacionchecador.db.DbHelper;
 
@@ -26,6 +29,7 @@ import java.util.stream.IntStream;
 public class chequeoClases extends AppCompatActivity {
 
     DbHelper dbHelper,dbHelpere;
+
     Spinner spinnerAula;
     Spinner spinnerMaestro;
     Button btnguardarclase;
@@ -46,7 +50,6 @@ public class chequeoClases extends AppCompatActivity {
 
         ////////////////////////Aulas////////////////////////////////////////////////////////
         dbHelper = new DbHelper(this);
-        spinnerAula = findViewById(R.id.SpAula);
         DbHelper dbHelper = new DbHelper(this);
 
         Cursor cursor = dbHelper.getSpinnerData();
@@ -55,19 +58,17 @@ public class chequeoClases extends AppCompatActivity {
         int[] toViews = {android.R.id.text1};
         SimpleCursorAdapter adapter = new SimpleCursorAdapter(this, android.R.layout.simple_spinner_item, cursor,nombres, toViews, 0);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        Spinner spinnerAula = findViewById(R.id.SpAula);
-        spinnerAula.setAdapter(adapter);
-/////////////////////////////////////////////////////////////////
+        SpAula.setAdapter(adapter);
+
+
+//////////////////////////holas///////////////////////////////////////
         String[] horas = {"7AM-8AM","8AM-9AM","9AM-10AM","10AM-11AM","11AM-12AM","12AM-1PM","1PM-2PM","2PM-3PM"};
         ArrayAdapter<String> Adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, horas);
         SpHORA.setAdapter(Adapter);
 
-        ///////////////////Maestros///////////////////////////////////////////////////
-
     ///////////////////Maestros///////////////////////////////////////////////////
 
         dbHelpere = new DbHelper(this);
-        spinnerMaestro = findViewById(R.id.SpDocente);
         DbHelper dbHelpere = new DbHelper(this);
 
         Cursor cursore = dbHelpere.getSpinnerDatas("maestro");
@@ -75,13 +76,50 @@ public class chequeoClases extends AppCompatActivity {
         int[] toViewse = {android.R.id.text1};
         SimpleCursorAdapter adaptere = new SimpleCursorAdapter(this, android.R.layout.simple_spinner_item, cursore,nombres1, toViewse, 0);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        Spinner spinnerMaestro = findViewById(R.id.SpDocente);
-        spinnerMaestro.setAdapter(adaptere);
+        SpDocente.setAdapter(adaptere);
 
         //crud
         String[] crud = {"IMPARTIDA","NO IMPARTIDA","CLASE INCOMPLETA","SUSPENCION"};
         ArrayAdapter<String> AdapterCrud = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, crud);
         SpAction.setAdapter(AdapterCrud);
+
+ //////////////////////////////////////////////////////////////////////////////////////
+
+        DbHelper finalDbHelper = dbHelper;
+        btnguardarclase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Obtener los valores seleccionados de los spinners y el texto ingresado en el EditText
+                String aula = SpAula.getSelectedItem().toString();
+                String hora = SpHORA.getSelectedItem().toString();
+                String docente = SpDocente.getSelectedItem().toString();
+                String accion = SpAction.getSelectedItem().toString();
+                String clases = etclases.getText().toString();
+
+                if (TextUtils.isEmpty(aula) || TextUtils.isEmpty(hora) || TextUtils.isEmpty(docente) || TextUtils.isEmpty(accion) || TextUtils.isEmpty(clases)) {
+                    // Mostrar mensaje de error
+                    Toast.makeText(chequeoClases.this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+              /*  if (dbHelper.checkClasesExists(clases)) {
+                    // Mostrar mensaje de error
+                    Toast.makeText(chequeoClases.this, "El campo clases ya existe", Toast.LENGTH_SHORT).show();
+                    return;
+                }*/
+
+                // Insertar los datos en la tabla "ChequeoClases"
+                finalDbHelper.insertarChequeoClases(aula, hora, docente, accion, clases);
+
+                // Limpiar los campos después de guardar
+                SpAula.setSelection(0);
+                SpHORA.setSelection(0);
+                SpDocente.setSelection(0);
+                SpAction.setSelection(0);
+                etclases.setText("");
+            }
+        });
+
+
     }
 
 
@@ -93,10 +131,6 @@ public class chequeoClases extends AppCompatActivity {
             dbHelper.close();
         }
     }
-
-
-
-
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.opcions_menu, menu);
