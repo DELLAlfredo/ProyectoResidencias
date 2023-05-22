@@ -101,7 +101,7 @@ public class chequeoClases extends AppCompatActivity {
                     Toast.makeText(chequeoClases.this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
                     return;
                 }
-              /*  if (dbHelper.checkClasesExists(clases)) {
+              /* if (dbHelper.checkClasesExists(clases)) {
                     // Mostrar mensaje de error
                     Toast.makeText(chequeoClases.this, "El campo clases ya existe", Toast.LENGTH_SHORT).show();
                     return;

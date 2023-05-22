@@ -64,7 +64,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 "Accion TEXT NOT NULL)");
     }
 /////////////////Revisa si ya existe un campo///////////////
-   /* public boolean checkClasesExists(String clases) {
+   /*public boolean checkClasesExists(String clases) {
         SQLiteDatabase db = getReadableDatabase();
         String query = "SELECT * FROM ChequeoClases WHERE clases = ?";
         Cursor cursor = db.rawQuery(query, new String[]{clases});
