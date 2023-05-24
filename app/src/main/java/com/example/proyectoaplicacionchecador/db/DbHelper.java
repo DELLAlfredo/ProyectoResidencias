@@ -8,7 +8,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
-import com.example.proyectoaplicacionchecador.abcMaestros;
 import com.example.proyectoaplicacionchecador.chequeoClases;
 
 public class DbHelper extends SQLiteOpenHelper {
@@ -31,6 +30,8 @@ public class DbHelper extends SQLiteOpenHelper {
         super(abcMaestros, POS, factory, DATABASE_VERSION);
 
     }
+
+
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
@@ -63,24 +64,13 @@ public class DbHelper extends SQLiteOpenHelper {
                 +"Hora TEXT NOT NULL,"+"" +
                 "Accion TEXT NOT NULL)");
     }
-/////////////////Revisa si ya existe un campo///////////////
-   /*public boolean checkClasesExists(String clases) {
-        SQLiteDatabase db = getReadableDatabase();
-        String query = "SELECT * FROM ChequeoClases WHERE clases = ?";
-        Cursor cursor = db.rawQuery(query, new String[]{clases});
-        boolean exists = cursor.getCount() > 0;
-        cursor.close();
-        return exists;
-    }*/
 
-    public Cursor getSpinnerData() {
+
+    public Cursor DatasAula() {
         SQLiteDatabase db = getReadableDatabase();
-        String[] projection = {"_id","nombre"}; // Cambia "nombre_aula" al nombre real del campo que deseas mostrar en el Spinner
-        String tableName = "t_aula"; // Cambia "tabla_aulas" al nombre real de la tabla que deseas consultar
-        return db.query(tableName, projection, null, null, null, null, null);
+        return db.rawQuery("Select nombre from t_aula", null);
+
     }
-
-
 
 
     @Override
@@ -89,29 +79,23 @@ public class DbHelper extends SQLiteOpenHelper {
         onCreate(sqLiteDatabase);
     }
 
-    public Cursor getSpinnerDatas(String maestro) {
-        SQLiteDatabase DB = getReadableDatabase();
-        String[] projection = {"_id","nombre"}; // Cambia "nombre_aula" al nombre real del campo que deseas mostrar en el Spinner
-        String tableName = "t_maestros"; // Cambia "tabla_aulas" al nombre real de la tabla que deseas consultar
-        return DB.query(tableName, projection, null, null, null, null, null);
-
+    public Cursor DatosMaestro(String maestro) {
+        SQLiteDatabase db = getReadableDatabase();
+        return db.rawQuery("Select nombre, apellidos from t_maestros", null);
     }
 
-    public void insertarChequeoClases(String aula, String hora, String docente, String accion, String clases) {
+
+    public void insertarChequeoClases(String aula, String hora, String docente, String accion) {
         SQLiteDatabase db = getWritableDatabase();
 
-        // Crear un objeto ContentValues y agregar los valores a insertar
         ContentValues values = new ContentValues();
         values.put("nombreAula", aula);
         values.put("Hora", hora);
-        values.put("nombreDocente", docente);
+        values.put("nombreDocente", docente);  // Utiliza "nombreDocente" en lugar de "nombre"
         values.put("Accion", accion);
-        values.put("_id", clases);
 
-        // Insertar los valores en la tabla "ChequeoClases"
         db.insert("ChequeoClases", null, values);
 
-        // Cerrar la base de datos
         db.close();
     }
 }
