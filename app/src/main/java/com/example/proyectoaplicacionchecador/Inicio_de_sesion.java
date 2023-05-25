@@ -10,10 +10,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.proyectoaplicacionchecador.db.DbHelper;
+
 //import com.example.proyectoaplicacionchecador.db.DbMaestros;
 
 public class Inicio_de_sesion extends AppCompatActivity {
-    Button btnInicarSesion;
+    Button btnInicarSesion , booton;
     EditText EdUsuario, EdContraseña;
      String password = "123";
      String user = "root";
@@ -29,6 +31,7 @@ public class Inicio_de_sesion extends AppCompatActivity {
     btnInicarSesion     = findViewById(R.id.btnInicarSesion);
     EdUsuario           = findViewById(R.id.EdUsuario);
     EdContraseña           = findViewById(R.id.EdContraseña);
+    booton=findViewById(R.id.button);
 
 
     btnInicarSesion.setOnClickListener(new View.OnClickListener() {
@@ -49,7 +52,27 @@ public class Inicio_de_sesion extends AppCompatActivity {
             }
         }
     });
+booton.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+            eliminarBaseDeDatos();
 
+    }
+});
+    }
+    private void eliminarBaseDeDatos() {
+        // Crea una instancia de la clase SQLiteOpenHelper
+        DbHelper dbHelper = new DbHelper(this);
+
+        // Elimina la base de datos utilizando deleteDatabase()
+        boolean eliminada = this.deleteDatabase(dbHelper.getDatabaseName());
+
+        // Verifica si se eliminó la base de datos correctamente
+        if (eliminada) {
+            Toast.makeText(this, "Base de datos eliminada correctamente", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "No se pudo eliminar la base de datos", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void camposVacios(){
