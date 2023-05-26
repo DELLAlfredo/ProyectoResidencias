@@ -19,7 +19,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String TABLE_CARRERA = "t_carrera";
     public static final String TABLE_ACADEMIA = "t_academia";
     public static final String TABLE_USER = "t_user";
-    public static  final  String TABLE_ChequeoClases ="ChequeoClases";
+    public static  final  String TABLE_ChequeoClases ="chequeo_clases";
 
 
     public DbHelper(Context context) {
@@ -36,7 +36,7 @@ public class DbHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_MAESTROS + "("+
-                "_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, "+
+                "id_maestro INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, "+
                 "nombre TEXT NOT NULL,"+
                 "apellidos TEXT NOT NULL,"+
                 "academia TEXT NOT NULL)");
@@ -54,11 +54,11 @@ public class DbHelper extends SQLiteOpenHelper {
                 "usuario TEXT NOT NULL,"+ "contraseña TEXT NOT NULL)");
 
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_AULA + "("+
-                "_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, "+
+                "id_aula INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, "+
                 "nombre TEXT NOT NULL)");
 
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_ChequeoClases + "("+
-                "_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, "+
+                "id_chequeo_clase INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, "+
                 "nombreAula TEXT NOT NULL,"
                 +"nombreDocente TEXT NOT NULL,"
                 +"Hora TEXT NOT NULL,"+"" +
@@ -83,6 +83,10 @@ public class DbHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = getReadableDatabase();
         return db.rawQuery("Select nombre, apellidos from t_maestros", null);
     }
+    public Cursor DatosReporte(String query) {
+        SQLiteDatabase db = getReadableDatabase();
+        return db.rawQuery(query, null);
+    }
 
 
     public void insertarChequeoClases(String aula, String hora, String docente, String accion) {
@@ -94,7 +98,7 @@ public class DbHelper extends SQLiteOpenHelper {
         values.put("nombreDocente", docente);  // Utiliza "nombreDocente" en lugar de "nombre"
         values.put("Accion", accion);
 
-        db.insert("ChequeoClases", null, values);
+        db.insert("chequeo_clases", null, values);
 
         db.close();
     }

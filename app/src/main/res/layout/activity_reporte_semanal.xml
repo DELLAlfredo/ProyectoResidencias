@@ -14,11 +14,14 @@
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="52dp"
+        android:background="@drawable/customspiner"
+        android:foregroundTint="#0B0A0A"
+
+        android:textColor="@color/black"
+        android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnreporte"
-
-        android:background="@drawable/customspiner"
-        android:textColor="@color/black"/>
+        tools:visibility="visible" />
 
     <Spinner
         android:id="@+id/Spaction"
@@ -98,6 +101,17 @@
         <TableRow android:background="@android:color/darker_gray">
 
             <TextView
+                android:id="@+id/txtMaestro"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/txtAula"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="4"
@@ -115,14 +129,6 @@
                 android:textColor="@color/black"
                 android:textSize="14sp" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:textColor="@color/black"
-                android:textSize="14sp" />
         </TableRow>
     </TableLayout>
 
