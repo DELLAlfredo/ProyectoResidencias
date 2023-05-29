@@ -95,6 +95,7 @@ public class chequeoClases extends AppCompatActivity {
         SpAction.setAdapter(AdapterCrud);
 
  //////////////////////////////////////////////////////////////////////////////////////
+        /*
         SpAula.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -116,6 +117,7 @@ public class chequeoClases extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
+        */
 
         btnguardarclase.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -153,10 +155,6 @@ public class chequeoClases extends AppCompatActivity {
 
 
     }
-
-
-
-
 
     protected void onDestroy() {
         super.onDestroy();
