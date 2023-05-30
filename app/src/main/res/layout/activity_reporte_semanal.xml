@@ -9,57 +9,28 @@
     tools:context=".ReporteSemanal">
 
     <Spinner
-        android:id="@+id/SpHora"
-        android:layout_width="177dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="52dp"
+        android:id="@+id/Spaction"
+        android:layout_width="211dp"
+        android:layout_height="47dp"
         android:background="@drawable/customspiner"
-        android:foregroundTint="#0B0A0A"
 
         android:textColor="@color/black"
-        android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnreporte"
-        tools:visibility="visible" />
-
-    <Spinner
-        android:id="@+id/Spaction"
-        android:layout_width="177dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/SpHora"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/SpHora"
-        app:layout_constraintTop_toTopOf="@+id/SpHora"
-
-        android:background="@drawable/customspiner"
-        android:textColor="@color/black"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.2749658" />
+        app:layout_constraintGuide_percent="0.1" />
 
-
-    <Button
-        android:id="@+id/btnreporte"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:backgroundTint="#32DF3A"
-        android:text="GENERAR REPORTE"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.167"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:layout_width="390dp"
-        android:layout_height="502dp"
+        android:layout_width="381dp"
+        android:layout_height="635dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

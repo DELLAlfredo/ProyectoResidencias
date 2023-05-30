@@ -38,13 +38,13 @@ public class ReporteSemanal extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reporte_semanal);
         SpAction = findViewById(R.id.Spaction);
-        SpHORA = findViewById(R.id.SpHora);
+        //SpHORA = findViewById(R.id.SpHora);
         tabla = findViewById(R.id.tabla);
-        btnreporte = findViewById(R.id.btnreporte);
+       // btnreporte = findViewById(R.id.btnreporte);
 
-        String[] horas = {"7AM-8AM", "8AM-9AM", "9AM-10AM", "10AM-11AM", "11AM-12AM", "12AM-1PM", "1PM-2PM", "2PM-3PM"};
+      /*  String[] horas = {"7AM-8AM", "8AM-9AM", "9AM-10AM", "10AM-11AM", "11AM-12AM", "12AM-1PM", "1PM-2PM", "2PM-3PM"};
         ArrayAdapter<String> Adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, horas);
-        SpHORA.setAdapter(Adapter);
+        SpHORA.setAdapter(Adapter);*/
 
 
         ///////////////////////////////Acciones//////////////////////////////////////////////////////////////////
@@ -56,7 +56,7 @@ public class ReporteSemanal extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String selectedAction = parent.getItemAtPosition(position).toString();
-                populateTable(selectedAction);
+                llenaCampos(selectedAction);
 
             }
 
@@ -84,9 +84,12 @@ public class ReporteSemanal extends AppCompatActivity {
         if (reporte.moveToFirst()) {
             do {
                 // Obtener los valores de las columnas
-                String nombreAula = reporte.getString(reporte.getColumnIndex("nombreAula"));
-                String nombreDocente = reporte.getString(reporte.getColumnIndex("nombreDocente"));
-                String accion = reporte.getString(reporte.getColumnIndex("Accion"));
+                int nomAula = reporte.getColumnIndex("nombreAula");
+                String nombreAula = reporte.getString(nomAula);
+                int nomDocente = reporte.getColumnIndex("nombreDocente");
+                String nombreDocente = reporte.getString(nomDocente);
+                int nomAccion = reporte.getColumnIndex("Accion");
+                String accion = reporte.getString(nomAccion);
 
                 // Crear una nueva fila en la tabla
                 TableRow fila = new TableRow(this);
@@ -115,11 +118,11 @@ public class ReporteSemanal extends AppCompatActivity {
         db.close();
 
     }
-    private void populateTable(String action) {
+    private void llenaCampos(String action) {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         String query = "SELECT nombreAula, nombreDocente, Accion FROM chequeo_clases WHERE Accion = ?";
         String[] selectionArgs = { action };
-        Cursor cursor = db.rawQuery(query, selectionArgs);
+        Cursor llena = db.rawQuery(query, selectionArgs);
 
         // Limpiar la tabla antes de agregar los nuevos datos
         tabla.removeAllViews();
@@ -138,12 +141,15 @@ public class ReporteSemanal extends AppCompatActivity {
         tabla.addView(headerRow);
 
         // Agregar las filas con los datos
-        while (cursor.moveToNext()) {
+        while (llena.moveToNext()) {
             TableRow dataRow = new TableRow(this);
             List<String> rowData = new ArrayList<>();
-            rowData.add(cursor.getString(cursor.getColumnIndex("nombreAula")));
-            rowData.add(cursor.getString(cursor.getColumnIndex("nombreDocente")));
-            rowData.add(cursor.getString(cursor.getColumnIndex("Accion")));
+            int aulanom = llena.getColumnIndex("nombreAula");
+            rowData.add(llena.getString(aulanom));
+            int docentenom = llena.getColumnIndex("nombreDocente");
+            rowData.add(llena.getString(docentenom));
+            int accionnom = llena.getColumnIndex("Accion");
+            rowData.add(llena.getString(accionnom));
 
             for (String data : rowData) {
                 TextView textView = new TextView(this);
@@ -155,7 +161,7 @@ public class ReporteSemanal extends AppCompatActivity {
             tabla.addView(dataRow);
         }
 
-        cursor.close();
+        llena.close();
         db.close();
     }
 
