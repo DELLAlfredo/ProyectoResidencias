@@ -56,80 +56,48 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TableLayout
-        android:id="@+id/tabla"
 
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ReporteSemanal">
 
-        <TableRow android:background="@android:color/holo_green_light">
+        <TableLayout
+            android:id="@+id/tabla"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="*">
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="@string/NombreMaestro"
-                android:textColor="@color/black"
-                android:textSize="14sp" />
+            <!-- Fila de encabezados -->
+            <TableRow android:layout_height="85dp">
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="@string/AULA"
-                android:textColor="@color/black"
-                android:textSize="14sp" />
+                <TextView
+                    android:layout_column="1"
+                    android:padding="5dp"
+                    android:text="Nombre de Aula"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="@string/DIOCLASES"
-                android:textColor="@color/black"
-                android:textSize="14sp" />
-        </TableRow>
-        <TableRow android:background="@android:color/darker_gray">
+                <TextView
+                    android:layout_height="match_parent"
+                    android:layout_column="2"
+                    android:padding="5dp"
+                    android:text="Nombre de Docente"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/txtMaestro"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:textColor="@color/black"
-                android:textSize="14sp" />
+                <TextView
+                    android:layout_column="3"
+                    android:padding="5dp"
+                    android:text="Acción"
+                    android:textStyle="bold" />
+            </TableRow>
 
-            <TextView
-                android:id="@+id/txtAula"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:textColor="@color/black"
-                android:textSize="14sp" />
+            <!-- Filas dinámicas para mostrar los datos -->
+            <!-- Se agregarán dinámicamente desde el código Java -->
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:textColor="@color/black"
-                android:textSize="14sp" />
+        </TableLayout>
 
-        </TableRow>
-    </TableLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

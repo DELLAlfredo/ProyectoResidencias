@@ -49,6 +49,13 @@ public class chequeoClases extends AppCompatActivity {
         SpAction = findViewById(R.id.SpAction);
 
 
+
+
+
+
+
+
+
         ////////////////////////Maestros////////////////////////////////////////////////////////
         dbHelperMaestro = new DbHelper(this);
         dbHelperAulas = new DbHelper(this);
@@ -150,6 +157,9 @@ public class chequeoClases extends AppCompatActivity {
                 SpHORA.setSelection(0);
                 SpDocente.setSelection(0);
                 SpAction.setSelection(0);
+
+
+
             }
         });
 

@@ -105,7 +105,7 @@ public class abcMaestros extends AppCompatActivity {
                 if (code != 0) {
                     DbHelper admin = new DbHelper(abcMaestros.this, "POS", null, 2);
                     SQLiteDatabase db = admin.getReadableDatabase();
-                    Cursor cursor = db.rawQuery("SELECT nombre,apellidos, academia from t_maestros where id_maestro=" + code, null);
+                    Cursor cursor = db.rawQuery("SELECT nombre,apellidos,academia from t_maestros where id_maestro=" + code, null);
                     if (cursor.moveToFirst()) {
                         Toast.makeText(abcMaestros.this, "Codigo ya existente \n elija otro codigo", Toast.LENGTH_LONG).show();
                     } else {
@@ -120,7 +120,7 @@ public class abcMaestros extends AppCompatActivity {
                         txtId.setText("");
                         txtApellidos.setText("");
                         txtNombre.setText("");
-                        Toast.makeText(abcMaestros.this, "Se guardo el registro", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(abcMaestros.this, "Se Guardo el registro", Toast.LENGTH_SHORT).show();
 
                     }
 

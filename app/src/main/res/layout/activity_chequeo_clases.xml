@@ -13,52 +13,35 @@
         android:id="@+id/SpAula"
         android:layout_width="273dp"
         android:layout_height="50dp"
-        android:layout_marginStart="68dp"
+        android:layout_marginStart="12dp"
+
         android:layout_marginTop="24dp"
         android:background="@drawable/customspiner"
-        app:layout_constraintEnd_toEndOf="@+id/textView3"
-        app:layout_constraintHorizontal_bias="0.435"
-
-        app:layout_constraintStart_toStartOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/etclases" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintTop_toTopOf="@+id/guideline13" />
 
     <Spinner
         android:id="@+id/SpHORA"
         android:layout_width="273dp"
         android:layout_height="50dp"
         android:layout_marginTop="44dp"
+        android:background="@drawable/customspiner"
         app:layout_constraintEnd_toEndOf="@+id/SpAula"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/SpAula"
-        app:layout_constraintTop_toBottomOf="@+id/SpAula"
 
-        android:background="@drawable/customspiner"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/SpAula" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:text="CHECAR CLASE"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline13"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="41dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="92dp"
-        android:text="ID:"
-        android:textColor="@color/design_default_color_on_primary"
-        android:textSize="24sp"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.138"
-        app:layout_constraintStart_toStartOf="parent"
-
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -158,24 +141,17 @@
         app:layout_constraintTop_toTopOf="@+id/guideline11"
         tools:layout_editor_absoluteX="148dp" />
 
-    <EditText
-        android:id="@+id/etclases"
-        android:layout_width="267dp"
-        android:layout_height="56dp"
-        android:layout_marginEnd="24dp"
-        android:background="@drawable/custumimput"
-        android:drawableStart="@drawable/idform"
-        android:ems="10"
-        android:hint="ID"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="@+id/textView4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView4" />
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.77017784" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.17099863" />
 </androidx.constraintlayout.widget.ConstraintLayout>
