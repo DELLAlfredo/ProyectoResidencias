@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.Menu;
@@ -14,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -28,6 +30,8 @@ import java.util.List;
 public class ReporteSemanal extends AppCompatActivity {
     Spinner SpAction, SpHORA;
     TableLayout tabla;
+    Button btnreporte;
+    DbHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +40,7 @@ public class ReporteSemanal extends AppCompatActivity {
         SpAction = findViewById(R.id.Spaction);
         SpHORA = findViewById(R.id.SpHora);
         tabla = findViewById(R.id.tabla);
+        btnreporte = findViewById(R.id.btnreporte);
 
         String[] horas = {"7AM-8AM", "8AM-9AM", "9AM-10AM", "10AM-11AM", "11AM-12AM", "12AM-1PM", "1PM-2PM", "2PM-3PM"};
         ArrayAdapter<String> Adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, horas);
@@ -50,8 +55,8 @@ public class ReporteSemanal extends AppCompatActivity {
         SpAction.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String docenteValue = parent.getItemAtPosition(position).toString();
-                Toast.makeText(ReporteSemanal.this, docenteValue, Toast.LENGTH_SHORT).show();
+                String selectedAction = parent.getItemAtPosition(position).toString();
+                populateTable(selectedAction);
 
             }
 
@@ -60,23 +65,11 @@ public class ReporteSemanal extends AppCompatActivity {
             }
         });
 
-       /* SpHORA.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String docenteValue = parent.getItemAtPosition(position).toString();
-                Toast.makeText(ReporteSemanal.this, docenteValue, Toast.LENGTH_SHORT).show();
-                String query = "SELECT nombreAula, nombreDocente FROM chequeo_clases WHERE Hora ='" + docenteValue + "'";
-                search(1, query);
 
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-            }
-        });*/
 
 
         TableLayout tabla = findViewById(R.id.tabla);
+        dbHelper = new DbHelper(this);
 
         // Obtener una instancia de la base de datos
         SQLiteDatabase db = new DbHelper(this).getReadableDatabase();
@@ -122,7 +115,49 @@ public class ReporteSemanal extends AppCompatActivity {
         db.close();
 
     }
+    private void populateTable(String action) {
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        String query = "SELECT nombreAula, nombreDocente, Accion FROM chequeo_clases WHERE Accion = ?";
+        String[] selectionArgs = { action };
+        Cursor cursor = db.rawQuery(query, selectionArgs);
 
+        // Limpiar la tabla antes de agregar los nuevos datos
+        tabla.removeAllViews();
+
+        // Crear la fila de encabezados
+        TableRow headerRow = new TableRow(this);
+        String[] headers = { "Aula", "Nombre de Docente", "Acción" };
+        for (String header : headers) {
+            TextView textView = new TextView(this);
+            textView.setText(header);
+            textView.setPadding(5, 5, 5, 5);
+            textView.setBackgroundResource(R.color.purple_200);
+            textView.setTypeface(null,Typeface.BOLD);
+            headerRow.addView(textView);
+        }
+        tabla.addView(headerRow);
+
+        // Agregar las filas con los datos
+        while (cursor.moveToNext()) {
+            TableRow dataRow = new TableRow(this);
+            List<String> rowData = new ArrayList<>();
+            rowData.add(cursor.getString(cursor.getColumnIndex("nombreAula")));
+            rowData.add(cursor.getString(cursor.getColumnIndex("nombreDocente")));
+            rowData.add(cursor.getString(cursor.getColumnIndex("Accion")));
+
+            for (String data : rowData) {
+                TextView textView = new TextView(this);
+                textView.setText(data);
+                textView.setPadding(5, 5, 5, 5);
+                textView.setBackgroundResource(R.color.teal_200);
+                dataRow.addView(textView);
+            }
+            tabla.addView(dataRow);
+        }
+
+        cursor.close();
+        db.close();
+    }
 
 
 

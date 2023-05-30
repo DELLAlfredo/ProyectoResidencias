@@ -83,10 +83,10 @@ public class DbHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = getReadableDatabase();
         return db.rawQuery("Select nombre, apellidos from t_maestros", null);
     }
-    public Cursor DatosReporte(String query) {
+    /*public Cursor DatosReporte(String query) {
         SQLiteDatabase db = getReadableDatabase();
         return db.rawQuery(query, null);
-    }
+    }*/
 
 
     public void insertarChequeoClases(String aula, String hora, String docente, String accion) {
