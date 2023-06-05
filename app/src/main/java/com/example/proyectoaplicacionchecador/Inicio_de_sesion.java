@@ -30,7 +30,7 @@ public class Inicio_de_sesion extends AppCompatActivity {
 
     btnInicarSesion     = findViewById(R.id.btnInicarSesion);
     EdUsuario           = findViewById(R.id.EdUsuario);
-    EdContraseña           = findViewById(R.id.EdContraseña);
+    EdContraseña        = findViewById(R.id.EdContraseña);
     booton=findViewById(R.id.button);
 
 

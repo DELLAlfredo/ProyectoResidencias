@@ -67,7 +67,6 @@ public class ReporteSemanal extends AppCompatActivity {
 
 
 
-
         TableLayout tabla = findViewById(R.id.tabla);
         dbHelper = new DbHelper(this);
 

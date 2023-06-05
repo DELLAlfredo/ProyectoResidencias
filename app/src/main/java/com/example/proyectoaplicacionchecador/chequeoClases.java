@@ -48,14 +48,6 @@ public class chequeoClases extends AppCompatActivity {
         SpDocente = findViewById(R.id.SpDocente);
         SpAction = findViewById(R.id.SpAction);
 
-
-
-
-
-
-
-
-
         ////////////////////////Maestros////////////////////////////////////////////////////////
         dbHelperMaestro = new DbHelper(this);
         dbHelperAulas = new DbHelper(this);
@@ -129,24 +121,36 @@ public class chequeoClases extends AppCompatActivity {
         btnguardarclase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(chequeoClases.this, "Se guardo Correcta Mente", Toast.LENGTH_SHORT).show();
                 // Obtener los valores seleccionados de los spinners y el texto ingresado en el EditText
-                String aula = SpAula.getSelectedItem().toString();
+                String aula = "";
                 String hora = SpHORA.getSelectedItem().toString();
-                String docente = SpDocente.getSelectedItem().toString();
+                String docente = "";
                 String accion = SpAction.getSelectedItem().toString();
 
-                // Verificar si los valores existen en los arrays guardados
-                if (!AulaValues.contains(aula) || !DocenteValues.contains(docente)) {
-                    // Mostrar mensaje de error
-                    Toast.makeText(chequeoClases.this, "Por favor, seleccione un valor válido para Aula y Docente", Toast.LENGTH_SHORT).show();
+
+                // Verificar si se ha seleccionado un valor en el spinner SpAula
+                if (SpAula.getSelectedItem() != null) {
+                    aula = SpAula.getSelectedItem().toString();
+                } else {
+                    // Mostrar mensaje de error si no se ha seleccionado un valor en SpAula
+                    Toast.makeText(chequeoClases.this, "Por favor,  llene los campos en Aulas", Toast.LENGTH_SHORT).show();
                     return;
                 }
-
-                if (TextUtils.isEmpty(aula) || TextUtils.isEmpty(hora) || TextUtils.isEmpty(docente) || TextUtils.isEmpty(accion)) {
+                // Verificar si se ha seleccionado un valor en el spinner SpDocente
+                if (SpDocente.getSelectedItem() != null) {
+                    docente = SpDocente.getSelectedItem().toString();
+                } else {
+                    // Mostrar mensaje de error si no se ha seleccionado un valor en SpDocente
+                    Toast.makeText(chequeoClases.this, "Por favor, llene los campos en Maestros", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                // Verificar si los demás campos están vacíos
+                if (TextUtils.isEmpty(aula) || TextUtils.isEmpty(docente) || TextUtils.isEmpty(hora) || TextUtils.isEmpty(accion)) {
                     // Mostrar mensaje de error
                     Toast.makeText(chequeoClases.this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
                     return;
+                }else {
+                    Toast.makeText(chequeoClases.this, "Se guardo Correcta Mente", Toast.LENGTH_SHORT).show();
                 }
 
                 // Insertar los datos en la tabla "ChequeoClases"
@@ -157,9 +161,6 @@ public class chequeoClases extends AppCompatActivity {
                 SpHORA.setSelection(0);
                 SpDocente.setSelection(0);
                 SpAction.setSelection(0);
-
-
-
             }
         });
 
